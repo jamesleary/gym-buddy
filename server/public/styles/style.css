@@ -23,6 +23,9 @@ body, html {
 #container {
   margin-top: 10px;
 }
+.md-padding {
+  text-decoration: none;
+}
 
 .container p{
   margin-top : 14px;
@@ -61,15 +64,17 @@ ul {
   overflow: hidden;
 }
 
-li {
-  float: left;
+.userhome {
+  padding-top: 50%;
+  
 }
 
+
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+
+  color: red;
+
+  list-style-type: none;
   text-decoration: none;
 }
 

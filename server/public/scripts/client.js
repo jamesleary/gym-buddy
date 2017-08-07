@@ -1,9 +1,9 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
-  console.log('myApp -- config')
+  console.log('myApp -- config');
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
@@ -22,14 +22,45 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
-      controller: 'InfoController',
+    .when('/workout', {
+      templateUrl: '/views/templates/workout.html',
+      controller: 'WorkoutController as wc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
         }
       }
+
+    })
+    .when('/createworkout', {
+      templateUrl: '/views/templates/createworkout.html',
+      controller: 'CreateController as cc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+
+    })
+    .when('/createexercise', {
+      templateUrl: '/views/templates/createexercise.html',
+      controller: 'CreateController as cc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+
+    })
+    .when('/completeworkout', {
+      templateUrl: '/views/templates/completeworkout.html',
+      controller: 'ViewcompleteController as vc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+
     })
     .otherwise({
       redirectTo: 'home'
