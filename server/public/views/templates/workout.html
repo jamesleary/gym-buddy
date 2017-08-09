@@ -1,9 +1,44 @@
-in workout
-
-<a href="#/user">Back</a>
 
 
-<div class="workoutData">
-  Click button below for workout data
-  <button ng-click='wc.getWorkout()'>Get Workout Data!!!!!</button>
+
+
+<div><select placeholder="Select Workout Here" ng-model="wc.currentWorkout">
+  <option ng-repeat = "select in wc.workouts">{{select.name}}</option>
+</select></div>
+
+<div >
+<input type="text" name="nameWorkout" placeholder="Name your workout">
+<input type="date" class="date-responsive">
+</div>
+
+
+<table class = "table table-responsive">
+<thead>
+  <tr>
+    <th>Exercise Name</th>
+    <th>Weight</th>
+    <th>Reps</th>
+    <th>Sets Completed</th>
+  </tr>
+</thead>
+
+    <!-- This repeat goes through all workouts brought from server and displays to the table, ng-if selects the current workout selected in drop down list -->
+  <tbody ng-repeat = 'currentWorkout in wc.workouts' ng-if="currentWorkout.name == wc.currentWorkout">
+    <tr><td>{{currentWorkout.exercise_one}}</td><td><input placeholder="Amt Lifted"type="number"></td><td>{{currentWorkout.reps_one}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr><td>{{currentWorkout.exercise_two}}</td><td><input placeholder="Amt Lifted"type="number"></td><td>{{currentWorkout.reps_two}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr><td>{{currentWorkout.exercise_three}}</td><td><input placeholder="Amt Lifted"type="number"></td><td>{{currentWorkout.reps_three}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr><td>{{currentWorkout.exercise_four}}</td><td><input placeholder="Amt Lifted"type="number"></td><td>{{currentWorkout.reps_four}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr><td>{{currentWorkout.exercise_five}}</td><td><input placeholder="Amt Lifted"type="number"></td><td>{{currentWorkout.reps_five}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr><td>{{currentWorkout.exercise_six}}</td><td><input placeholder="Amt Lifted"type="number"></td><td>{{currentWorkout.reps_six}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+  </tbody>
+</table>
+
+
+<div><input type="text" style='height 200px; font-size 30px'name="notes" placeholder="Workout Notes">
+</div>
+
+<div><button type="button" name="button">Complete Workout</button>
+</div>
+
+<div><a href="#/user">Back</a>
 </div>

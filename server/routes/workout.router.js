@@ -9,10 +9,9 @@ router.get('/', function(req, res){
   //error connecting is boolean, db is what we query against
   //done is a function that we can when we're done
   // console.log('Pool info: ', pool);
-
   pool.connect(function(errorConnectingToDatabase, db, done){
-
     if(errorConnectingToDatabase){
+      console.log('req.user.id', req.user.id);
       console.log('Error connecting to the database.', errorConnectingToDatabase);
       res.sendStatus(500);
     } else {
@@ -20,7 +19,8 @@ router.get('/', function(req, res){
       //Now we're going to GET all workouts created by logged in User.
       // var queryText = 'SELECT * FROM workouts';
       // errorMakingQuery is a boolean, result is an object
-      db.query('SELECT * FROM workoutz', function(errorMakingQuery, result){
+      var queryText = 'SELECT * FROM "workouts" JOIN "users" ON "users"."id" = "workouts"."user_id" WHERE "users"."id" = $1';
+      db.query(queryText,[req.user.id],function(errorMakingQuery, result){
         done();
         if(errorMakingQuery){
           console.log('Attempted to query with', errorMakingQuery);
@@ -34,8 +34,9 @@ router.get('/', function(req, res){
       });
     }
   });
+});//end of get
 
+router.post('/', function(req, res){
 
 });
-
 module.exports = router;
