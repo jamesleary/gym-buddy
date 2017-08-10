@@ -86,7 +86,7 @@ myApp.config(function($routeProvider, $locationProvider,momentPickerProvider) {
     })
     .when('/completeworkout/selected', {
       templateUrl: '/views/templates/completeworkoutselect.html',
-      controller: 'ViewSelectCompleteController as vsc',
+      controller: 'ViewCompleteController as vc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
