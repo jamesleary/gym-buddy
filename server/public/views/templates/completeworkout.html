@@ -6,7 +6,7 @@
 </div>
 
 
-<table class = "table table-responsive" ng-model="complete_table">
+<table class = "table table-responsive">
 <thead>
   <tr>
     <th>Workout Name</th>
@@ -18,7 +18,7 @@
 </thead>
 <tbody ng-repeat= "complete in vc.completeWorkouts | filter : search_workout">
   <tr><td>{{complete.name}}</td><td>{{complete.unique_name}}</td><td>{{complete.workout_date}}</td>
-  <td><a href="#/completeworkout/selected"><button> O</button></a></td><td><button>X<button></td></tr>
+  <td><a href="#/completeworkout/selected"><button ng-click="vc.getCompleteSelectedWorkout(complete)"> O</button></a></td><td><button>X<button></td></tr>
 </tbody>
 
 

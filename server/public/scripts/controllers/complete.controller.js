@@ -1,7 +1,8 @@
-myApp.controller('ViewCompleteController', function($http) {
+myApp.controller('ViewCompleteController', function($http, CompleteWorkoutService) {
 
   console.log('ViewCompleteController created');
   var vc = this;
+  vc.data = CompleteWorkoutService.data;
 
 //Retrieve all completed workouts by logged in user
 vc.getCompleteWorkouts = function (){
@@ -14,13 +15,20 @@ vc.getCompleteWorkouts = function (){
 };
 vc.getCompleteWorkouts();
 
-vc.getCompleteSelectedWorkout= function(index) {
-  // vc.selectedCompleteWorkout = vc.comepletearray[index];
+//function allows user to view a single completed workout on seperate view,
+//spcifically this function is reassigning the selected workout index from
+//completed workout view and databinds that certain workout to be viewed on
+// completeworkoutselect.html view
+vc.getCompleteSelectedWorkout= function(selectedWorkout) {
+console.log(vc.data);
+  vc.data.selectedWorkout = selectedWorkout;
 };
 
 //Delete Selected workout
 vc.deleteCompletedWorkout = function () {
   console.log('Delete Button Clicked');
 
+vc.getCompleteWorkouts();
 };
+
 }); //end of workout controller

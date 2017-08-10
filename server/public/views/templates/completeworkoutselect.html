@@ -1,22 +1,24 @@
 in complete workout select
 <a href="#/completeworkout">Back</a>
 
-<!-- <div>
-<input class='completeSearch' type="text" ng-model="search_workout" placeholder="Search by Name, Unique Name, or Date">
-</div>
-
 
 <table class = "table table-responsive" ng-model="complete_table">
 <thead>
   <tr>
-    <th>Workout Name</th>
-    <th>Unique Name</th>
-    <th>Date</th>
-    <th>View Details</th>
-    <th>Delete</th>
+    <thead>
+      <tr>
+        <th>Exercise Name</th>
+        <th>Weight</th>
+        <th>Reps</th>
+      </tr>
+    </thead>
   </tr>
 </thead>
-<tbody ng-repeat= "complete in vc.completeWorkouts | filter : search_workout">
-  <tr><td>{{complete.name}}</td><td>{{complete.unique_name}}</td><td>{{complete.workout_date}}</td>
-  <td><a><button ng-href="#/completeworkout/selected"ng-click="vc.getCompleteWorkoutData($index)";>O<button></a></td><td><button>X<button></td></tr>
-</tbody> --> -->
+<tbody>
+<tr><td>{{vc.selectedCompleteWorkout.exercise_one}}</td><td>{{vc.selectedCompleteWorkout.wegiht_one}}</td><td>{{vc.selectedCompleteWorkout.reps_one}}</td></tr>
+<tr><td>{{vc.selectedCompleteWorkout.exercise_two}}</td></td><td>{{vc.selectedCompleteWorkout.wegiht_two}}</td><td>{{vc.selectedCompleteWorkout.reps_two}}</td></tr>
+<tr><td>{{vc.selectedCompleteWorkout.exercise_three}}</td></td><td>{{vc.selectedCompleteWorkout.wegiht_three}}</td><td>{{vc.selectedCompleteWorkout.reps_three}}</td></tr>
+<tr><td>{{vc.selectedCompleteWorkout.exercise_four}}</td></td><td>{{vc.selectedCompleteWorkout.wegiht_four}}</td><td>{{vc.selectedCompleteWorkout.reps_four}}</td></tr>
+<tr><td>{{vc.selectedCompleteWorkout.exercise_five}}</td></td><td>{{vc.selectedCompleteWorkout.wegiht_five}}</td><td>{{vc.selectedCompleteWorkout.reps_five}}</td></tr>
+<tr><td>{{vc.selectedCompleteWorkout.exercise_six}}</td><td>{{vc.selectedCompleteWorkout.wegiht_six}}</td><td>{{vc.selectedCompleteWorkout.reps_six}}</td></tr>
+</tbody>
