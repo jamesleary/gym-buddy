@@ -1,9 +1,34 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'moment-picker']);
 
 /// Routes ///
-myApp.config(function($routeProvider, $locationProvider) {
+myApp.config(function($routeProvider, $locationProvider,momentPickerProvider) {
   $locationProvider.hashPrefix('');
+  momentPickerProvider.options({
+      /* Picker properties */
+      locale:        'en',
+      format:        'LL',
+      minView:       'decade',
+      maxView:       'minute',
+      startView:     'year',
+      autoclose:     true,
+      today:         true,
+      keyboard:      false,
+
+      /* Extra: Views properties */
+      leftArrow:     '&larr;',
+      rightArrow:    '&rarr;',
+      yearsFormat:   'YYYY',
+      monthsFormat:  'MMM',
+      daysFormat:    'D',
+      hoursFormat:   'HH:[00]',
+      minutesFormat: moment.localeData().longDateFormat('LT').replace(/[aA]/, ''),
+      secondsFormat: 'ss',
+      minutesStep:   5,
+      secondsStep:   1
+  });
   console.log('myApp -- config');
+
+
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
