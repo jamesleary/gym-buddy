@@ -27,8 +27,6 @@ myApp.config(function($routeProvider, $locationProvider,momentPickerProvider) {
       secondsStep:   1
   });
   console.log('myApp -- config');
-
-
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
@@ -79,13 +77,21 @@ myApp.config(function($routeProvider, $locationProvider,momentPickerProvider) {
     })
     .when('/completeworkout', {
       templateUrl: '/views/templates/completeworkout.html',
-      controller: 'ViewcompleteController as vc',
+      controller: 'ViewCompleteController as vc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
         }
       }
-
+    })
+    .when('/completeworkout/selected', {
+      templateUrl: '/views/templates/completeworkoutselect.html',
+      controller: 'ViewCompleteController as vc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .otherwise({
       redirectTo: 'home'

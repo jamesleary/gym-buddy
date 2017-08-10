@@ -1,7 +1,7 @@
+in complete workout select
+<a href="#/completeworkout">Back</a>
 
-<a href="#/user">Back</a>
-
-<div>
+<!-- <div>
 <input class='completeSearch' type="text" ng-model="search_workout" placeholder="Search by Name, Unique Name, or Date">
 </div>
 
@@ -18,8 +18,5 @@
 </thead>
 <tbody ng-repeat= "complete in vc.completeWorkouts | filter : search_workout">
   <tr><td>{{complete.name}}</td><td>{{complete.unique_name}}</td><td>{{complete.workout_date}}</td>
-  <td><a href="#/completeworkout/selected"><button> O</button></a></td><td><button>X<button></td></tr>
-</tbody>
-
-
-<!-- ng-click="vc.getCompleteWorkoutData($index)" -->
+  <td><a><button ng-href="#/completeworkout/selected"ng-click="vc.getCompleteWorkoutData($index)";>O<button></a></td><td><button>X<button></td></tr>
+</tbody> --> -->
