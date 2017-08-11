@@ -16,10 +16,13 @@
     <th>Delete</th>
   </tr>
 </thead>
-<tbody ng-repeat= "complete in vc.completeWorkouts | filter : search_workout">
-  <tr><td>{{complete.name}}</td><td>{{complete.unique_name}}</td><td>{{complete.workout_date}}</td>
-  <td><a href="#/completeworkout/selected"><button ng-click="vc.getCompleteSelectedWorkout(complete)"> O</button></a></td><td><button>X<button></td></tr>
+<tbody >
+  <tr ng-repeat= "complete in vc.completeWorkouts | filter : search_workout">
+    <td>{{complete.name}}</td>
+    <td>{{complete.unique_name}}</td>
+    <td>{{complete.workout_date}}</td>
+  <td><button ng-click="vc.getCompleteSelectedWorkout(complete)"> O</button></td>
+  <td><button ng-click="vc.deleteCompletedWorkout(complete)">X</button></td></tr>
 </tbody>
 
-
-<!-- ng-click="vc.getCompleteWorkoutData($index)" -->
+</table>

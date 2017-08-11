@@ -5,4 +5,5 @@ myApp.factory('CompleteWorkoutService', function($http){
 
 
 return {data:data};
+
 });
