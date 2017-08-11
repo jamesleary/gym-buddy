@@ -4,6 +4,7 @@ myApp.controller('CreateController', function($http,$location) {
   var cc = this;
 
 
+
   cc.getClasses = function (){
       console.log('click get exercise function');
 
@@ -36,11 +37,22 @@ myApp.controller('CreateController', function($http,$location) {
   cc.getExercises();
 
 
-  cc.editExercise = function(){
-
+  cc.editExercise = function(updateExercise){
+    console.log('edit click', updateExercise);
+    $http.put('/createExercise/update/'+ updateExercise.id, updateExercise).then(function(response){
+        console.log('edit successful');
+    });
+    cc.getExercises();
   };
 
-  cc.deleteExercise = function(){
+  cc.deleteExercise = function(selectedExercise){
+    console.log('delete click', selectedExercise.id);
+    $http.delete('/createExercise/'+ selectedExercise.id).then(function(response){
+      console.log('exercise got deleted, Nice');
+      cc.getExercises();
+    }, function(failure){
+      console.log('something broke');
+    });
 
   };
 }); //end of create controller

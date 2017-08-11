@@ -39,6 +39,7 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
   console.log('inside POST exercise');
   var exercise = req.body;
+  var exerciseId = req.user.id;
   //error connecting is boolean, db is what we query against
   //done is a function that we can when we're done
   // console.log('Pool info: ', pool);
@@ -51,7 +52,7 @@ router.post('/', function(req, res){
       //we connected to the database!!!
       //POST into exercise table
       var queryText = 'INSERT INTO "exercises" (class, exercise_name, user_id) VALUES ($1,$2,$3);' ;
-      db.query(queryText,[exercise.class, exercise.exerciseName, req.user.id],function(errorMakingQuery, result){
+      db.query(queryText,[exercise.class, exercise.exerciseName, exerciseId],function(errorMakingQuery, result){
         done();
         if(errorMakingQuery){
           console.log('Attempted to query with', errorMakingQuery);
@@ -66,35 +67,36 @@ router.post('/', function(req, res){
     }
   });
 });
-// router.delete('/:id', function(req, res){
-//   var id = req.params.id;
-//   console.log('Delete', id);
-//     //error connecting is boolean, db is what we query against
-//     //done is a function that we can when we're done
-//     pool.connect(function(errorConnectingToDatabase, db, done){
-//       if(errorConnectingToDatabase){
-//         console.log('Error connecting to the database.');
-//         res.sendStatus(500);
-//       } else {
-//         //we connected to the database!!!
-//         //Now we're going to GET things from the db
-//         var queryText = 'DELETE FROM "complete_workout" WHERE id = $1';
-//         // errorMakingQuery is a boolean, result is an object
-//         db.query(queryText, [id], function(errorMakingQuery, result){
-//           done();
-//           if(errorMakingQuery){
-//             console.log('Attempted to query with', queryText);
-//             console.log('Error making query');
-//             res.sendStatus(500);
-//           } else {
-//             // console.log(result);
-//             //send back the results
-//             res.sendStatus(200);
-//           }
-//         });
-//       }
-//     });
-// });
+
+router.delete('/:id', function(req, res){
+  var id = req.params.id;
+  console.log('Delete', id);
+    //error connecting is boolean, db is what we query against
+    //done is a function that we can when we're done
+    pool.connect(function(errorConnectingToDatabase, db, done){
+      if(errorConnectingToDatabase){
+        console.log('Error connecting to the database.');
+        res.sendStatus(500);
+      } else {
+        //we connected to the database!!!
+        //Now we're going to GET things from the db
+        var queryText = 'DELETE FROM "exercises" WHERE id = $1';
+        // errorMakingQuery is a boolean, result is an object
+        db.query(queryText, [id], function(errorMakingQuery, result){
+          done();
+          if(errorMakingQuery){
+            console.log('Attempted to query with', queryText);
+            console.log('Error making query');
+            res.sendStatus(500);
+          } else {
+            // console.log(result);
+            //send back the results
+            res.sendStatus(200);
+          }
+        });
+      }
+    });
+});
 
 router.get('/exercise', function(req, res){
   console.log('inside GET exercise');
@@ -111,7 +113,7 @@ router.get('/exercise', function(req, res){
       //Now we're going to GET all workouts created by logged in User.
       // var queryText = 'SELECT * FROM workouts';
       // errorMakingQuery is a boolean, result is an object
-      var queryText = 'SELECT * FROM "exercises" JOIN "users" ON "users"."id" = "exercises"."user_id" WHERE "users"."id" = $1;' ;
+      var queryText = 'SELECT * FROM "exercises" WHERE "user_id" = $1;' ;
       db.query(queryText,[req.user.id],function(errorMakingQuery, result){
         done();
         if(errorMakingQuery){
@@ -126,6 +128,38 @@ router.get('/exercise', function(req, res){
       });
     }
   });
+});
+
+router.put('/update/:id', function(req, res){
+  var id = req.params.id;
+  var update = req.body;
+  console.log('put', id);
+  console.log('req.body', req.body);
+    //error connecting is boolean, db is what we query against
+    //done is a function that we can when we're done
+    pool.connect(function(errorConnectingToDatabase, db, done){
+      if(errorConnectingToDatabase){
+        console.log('Error connecting to the database.');
+        res.sendStatus(500);
+      } else {
+        //we connected to the database!!!
+        //Now we're going to GET things from the db
+        var queryText = 'UPDATE exercises SET (exercise_name, class) = ($2, $3) WHERE id = $1;';
+        // errorMakingQuery is a boolean, result is an object
+        db.query(queryText,[id, update.exercise_name, update.class] ,function(errorMakingQuery, result){
+          done();
+          if(errorMakingQuery){
+            console.log('Attempted to query with', errorMakingQuery);
+            console.log('Error making query');
+            res.sendStatus(500);
+          } else {
+            // console.log(result);
+            //send back the results
+            res.sendStatus(200);
+          }
+        });
+      }
+    });
 });
 
 module.exports = router;

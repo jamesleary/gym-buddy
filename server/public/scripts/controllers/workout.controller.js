@@ -7,7 +7,6 @@ wc.setCurrentWorkout = function (){
 
 };
 
-
 wc.getWorkouts = function (){
     console.log('click get workout function');
 

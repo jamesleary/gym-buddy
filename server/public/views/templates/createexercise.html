@@ -1,15 +1,13 @@
 in create excercise
 <a href="#/user">Back</a>
 
-<select placeholder="Select Class" ng-model="cc.currentClass" ng-options="specificClass.class for specificClass in cc.classes"></select>
+<select placeholder="Select Class" ng-model="cc.currentClass" ng-options="specificClass.class for specificClass in cc.classes" ></select>
 
 
 <div> <input type="text" ng-model="exerciseName" placeholder="Enter Exercise Name Here" class="exerciseInput"></div>
 
 
 <button ng-click="cc.postExercises(cc.currentClass, exerciseName)">Create Custom Exercise</button>
-
-
 
 
 <table class = "table table-responsive">
@@ -21,12 +19,12 @@ in create excercise
     <th>Delete</th>
   </tr>
 </thead>
-<tbody >
-  <tr ng-repeat= "exercise in cc.exerciseList">
-    <td>{{exercise.exercise_name}}</td>
-    <td>{{exercise.class}}</td>
-    <td><button>Edit</button></td>
-    <td><button>Delete</button></td>
+<tbody > <!-- class is the property of exercise that we are filtering on-->
+  <tr ng-repeat= "exercise in cc.exerciseList | filter: {class:cc.currentClass.class}">
+    <td><textarea ng-model="exercise.exercise_name"></textarea></td>
+    <td><textarea ng-model="exercise.class"></textarea></td>
+    <td><button ng-click="cc.editExercise(exercise)">Edit</button></td>
+    <td><button ng-click="cc.deleteExercise(exercise)">Delete</button></td>
 
 </tbody>
 
