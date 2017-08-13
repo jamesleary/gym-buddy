@@ -57,7 +57,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     })
     .when('/createworkout', {
       templateUrl: '/views/templates/createworkout.html',
-      controller: 'CreateController as cc',
+      controller: 'CreateWorkoutController as cw',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();

@@ -16,6 +16,16 @@ myApp.controller('CreateController', function($http,$location) {
   cc.getClasses();
 
 
+
+  cc.getExercises = function(){
+    console.log('getExercises clicked');
+    $http.get('/createExercise/exercise').then(function(response){
+      console.log(response.data.exercises);
+      cc.exerciseList = response.data.exercises;
+  });
+  };
+  cc.getExercises();
+  
   cc.postExercises = function(currentClass, exerciseName){
     console.log('click post exercise function', currentClass.class, exerciseName);
     var exerciseToSend = {
@@ -27,15 +37,6 @@ myApp.controller('CreateController', function($http,$location) {
       });
       cc.getExercises();
   };
-  cc.getExercises = function(){
-    console.log('getExercises clicked');
-    $http.get('/createExercise/exercise').then(function(response){
-      console.log(response.data.exercises);
-      cc.exerciseList = response.data.exercises;
-  });
-  };
-  cc.getExercises();
-
 
   cc.editExercise = function(updateExercise){
     console.log('edit click', updateExercise);
