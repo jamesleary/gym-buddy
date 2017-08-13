@@ -1,7 +1,7 @@
 in create workout
 <a href="#/user">Back</a>
 
-
+<div><input ng-model="exercise.workout_name" ng-init="exercise.exercise_name = 'Enter Workout Name Here'"></div>
 <table class = "table table-responsive">
 <thead>
   <tr>
@@ -10,36 +10,41 @@ in create workout
   </tr>
 </thead>
 <tbody >
-  <tr >
-    <td class="exercise"><select >
-    <option >test</option></select></td>
+  <tr>
+    <td><select ng-model="exercise.workout_one" ng-options="exercise.exercise_name for exercise in cw.exerciseList">
+    </select></td>
 
-    <td><input type="number" value= 10></td>
+    <td><input type="number" ng-model="exercise.reps_one" ></td>
   </tr>
   <tr >
-    <td class="exercise"></td>
+    <td ><select ng-model="exercise.workout_two" ng-options="exercise.exercise_name for exercise in cw.exerciseList">
+    </select></td>
 
-    <td><input type="number" value= 10></td>
+    <td><input type="number" ng-model="exercise.reps_two" ></td>
   </tr>
-  <tr >
-    <td class="exercise"></td>
+  <tr>
+    <td><select ng-model="exercise.workout_three" ng-options="exercise.exercise_name for exercise in cw.exerciseList">
+    </select></td>
 
-    <td><input type="number" value= 10></td>
+    <td><input type="number" ng-model="exercise.reps_three" ></td>
   </tr>
-  <tr >
-    <td class="exercise"></td>
+  <tr>
+    <td><select ng-model="exercise.workout_four" ng-options="exercise.exercise_name for exercise in cw.exerciseList">
+    </select></td>
 
-    <td><input type="number" value= 10></td>
+    <td><input type="number" ng-model="exercise.reps_four" ></td>
   </tr>
-  <tr >
-    <td class="exercise"></td>
+  <tr>
+    <td><select ng-model="exercise.workout_five" ng-options="exercise.exercise_name for exercise in cw.exerciseList">
+    </select></td>
 
-    <td><input type="number" value= 10></td>
+    <td><input type="number" ng-model="exercise.reps_five" ></td>
   </tr>
-  <tr >
-    <td class="exercise"></td>
+  <tr>
+    <td><select ng-model="exercise.workout_six" ng-options="exercise.exercise_name for exercise in cw.exerciseList">
+    </select></td>
 
-    <td><input type="number" value= 10></td>
+    <td><input type="number" ng-model="exercise.reps_six" ></td>
   </tr>
 </tbody>
 
@@ -49,4 +54,4 @@ in create workout
 
 
 
-<button ng-click="cw.createNewWorkout()">Create New Workout</button>
+<button ng-click="cw.createNewWorkout(exercise)">Create New Workout</button>

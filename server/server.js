@@ -12,6 +12,8 @@ var registerRouter = require('./routes/register.router');
 var workoutRouter = require('./routes/workout.router');
 var completeWorkoutRouter = require('./routes/completeWorkout.router');
 var createExerciseRouter = require('./routes/createExercise.router');
+var createWorkoutRouter = require('./routes/createWorkout.router');
+
 
 var port = process.env.PORT || 5000;
 
@@ -35,6 +37,7 @@ app.use('/user', userRouter);
 app.use('/workouts', workoutRouter);
 app.use('/complete', completeWorkoutRouter);
 app.use('/createExercise', createExerciseRouter);
+app.use('/createWorkout', createWorkoutRouter);
 
 // Catch all bucket, must be last!
 app.use('/', indexRouter);
