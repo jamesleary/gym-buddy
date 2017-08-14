@@ -26,5 +26,7 @@ myApp.controller('CreateWorkoutController', function($http,$location) {
 
   };
 
+  
+
 
 }); //end of create controller

@@ -3,29 +3,7 @@ var myApp = angular.module('myApp', ['ngRoute']);
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
-  // momentPickerProvider.options({
-  //     /* Picker properties */
-  //     locale:        'en',
-  //     format:        'LL',
-  //     minView:       'decade',
-  //     maxView:       'minute',
-  //     startView:     'year',
-  //     autoclose:     true,
-  //     today:         true,
-  //     keyboard:      false,
-  //
-  //     /* Extra: Views properties */
-  //     leftArrow:     '&larr;',
-  //     rightArrow:    '&rarr;',
-  //     yearsFormat:   'YYYY',
-  //     monthsFormat:  'MMM',
-  //     daysFormat:    'D',
-  //     hoursFormat:   'HH:[00]',
-  //     minutesFormat: moment.localeData().longDateFormat('LT').replace(/[aA]/, ''),
-  //     secondsFormat: 'ss',
-  //     minutesStep:   5,
-  //     secondsStep:   1
-  // });
+
   console.log('myApp -- config');
   $routeProvider
     .when('/home', {
@@ -53,7 +31,6 @@ myApp.config(function($routeProvider, $locationProvider) {
           return UserService.getuser();
         }
       }
-
     })
     .when('/createworkout', {
       templateUrl: '/views/templates/createworkout.html',
@@ -63,10 +40,19 @@ myApp.config(function($routeProvider, $locationProvider) {
           return UserService.getuser();
         }
       }
-
     })
     .when('/createexercise', {
       templateUrl: '/views/templates/createexercise.html',
+      controller: 'CreateController as cc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+
+    })
+    .when('/createexercise/viewallexercises', {
+      templateUrl: '/views/templates/editexercises.html',
       controller: 'CreateController as cc',
       resolve: {
         getuser : function(UserService){
@@ -84,15 +70,7 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
-    .when('/completeworkout/selected', {
-      templateUrl: '/views/templates/completeworkoutselect.html',
-      controller: 'ViewCompleteController as vc',
-      resolve: {
-        getuser : function(UserService){
-          return UserService.getuser();
-        }
-      }
-    })
+
     .otherwise({
       redirectTo: 'home'
     });

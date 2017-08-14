@@ -71,4 +71,36 @@ router.post('/', function(req, res){
   });
 });
 
+router.get('/randomQuote', function(req, res){
+  console.log('get randomQuote');
+  //error connecting is boolean, db is what we query against
+  //done is a function that we can when we're done
+  // console.log('Pool info: ', pool);
+  pool.connect(function(errorConnectingToDatabase, db, done){
+    if(errorConnectingToDatabase){
+      console.log('req.user.id', req.user.id);
+      console.log('Error connecting to the database.', errorConnectingToDatabase);
+      res.sendStatus(500);
+    } else {
+      //we connected to the database!!!
+      //Now we're going to GET all workouts created by logged in User.
+      // var queryText = 'SELECT * FROM workouts';
+      // errorMakingQuery is a boolean, result is an object
+      var queryText = 'SELECT "quote" FROM "quotes" ORDER BY RANDOM() LIMIT 1';
+      db.query(queryText, function(errorMakingQuery, result){
+        done();
+        if(errorMakingQuery){
+          console.log('Attempted to query with', errorMakingQuery);
+          // console.log('Error making query');
+          res.sendStatus(500);
+        } else {
+          // console.log(result);
+          //send back the results
+          res.send({quote: result.rows});
+        }
+      });
+    }
+  });
+});
+
 module.exports = router;

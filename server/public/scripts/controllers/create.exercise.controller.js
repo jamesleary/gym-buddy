@@ -3,7 +3,10 @@ myApp.controller('CreateController', function($http,$location) {
   console.log('CreateController created');
   var cc = this;
 
-
+  cc.editExercises = function(){
+    console.log('go to edit page');
+    $location.path('/createexercise/viewallexercises');
+  };
 
   cc.getClasses = function (){
       console.log('click get exercise function');
@@ -25,7 +28,7 @@ myApp.controller('CreateController', function($http,$location) {
   });
   };
   cc.getExercises();
-  
+
   cc.postExercises = function(currentClass, exerciseName){
     console.log('click post exercise function', currentClass.class, exerciseName);
     var exerciseToSend = {

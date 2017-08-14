@@ -1,6 +1,12 @@
   <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
 
-<div layout="column"layout-align="space-between center" class="userhome md-display-1">
+
+<div id="motivation">
+  {{uc.quote[0].quote}}
+</div>
+
+
+<div layout="column"layout="center">
   <div><a href="#/workout"><button >Select a workout</button></a></div>
   <div><a href="#/createworkout"><button >Create a Workout</button></a></div>
   <div><a href="#/createexercise"><button> Create an Exercise</button></a></div>
