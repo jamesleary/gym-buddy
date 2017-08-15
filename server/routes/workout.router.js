@@ -19,7 +19,7 @@ router.get('/', function(req, res){
       //Now we're going to GET all workouts created by logged in User.
       // var queryText = 'SELECT * FROM workouts';
       // errorMakingQuery is a boolean, result is an object
-      var queryText = 'SELECT * FROM "workouts" JOIN "users" ON "users"."id" = "workouts"."user_id" WHERE "users"."id" = $1';
+      var queryText = 'SELECT * FROM "workouts" WHERE "user_id" = $1';
       db.query(queryText,[req.user.id],function(errorMakingQuery, result){
         done();
         if(errorMakingQuery){

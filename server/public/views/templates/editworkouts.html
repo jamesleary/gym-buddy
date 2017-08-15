@@ -1,0 +1,20 @@
+<a href="#/createworkout">Back</a>
+<div class="">Delete a Workout</div>
+
+
+<table class = "table table-responsive">
+<thead>
+  <tr>
+    <th>Workout Name</th>
+    <th>Delete</th>
+  </tr>
+</thead>
+<tbody > <!-- class is the property of exercise that we are filtering on-->
+  <tr ng-repeat= "workout in cw.workouts ">
+    <td>{{workout.name}}</td>
+
+    <td><button ng-click="cw.deleteWorkout(workout)">Delete</button></td>
+</tr>
+</tbody>
+
+</table>

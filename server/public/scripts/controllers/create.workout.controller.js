@@ -3,7 +3,9 @@ myApp.controller('CreateWorkoutController', function($http,$location) {
   console.log('CreateWorkoutController created');
   var cw = this;
 
-
+  cw.goToEditWorkouts = function (){
+    $location.path('/createworkout/editworkout');
+  };
 
   cw.getExercises = function (){
       console.log('click get exercise function');
@@ -26,7 +28,29 @@ myApp.controller('CreateWorkoutController', function($http,$location) {
 
   };
 
-  
+
+
+  cw.getWorkouts = function () {
+    console.log('inside getWorkouts');
+    $http.get('/workouts').then(function(response){
+      console.log(response.data.workouts);
+      cw.workouts = response.data.workouts;
+    });
+  };
+
+  cw.getWorkouts();
+
+
+  cw.deleteWorkout = function(selectedWorkout){
+    console.log('delete click', selectedWorkout.id);
+    $http.delete('/createworkout/'+ selectedWorkout.id).then(function(response){
+      console.log('workout deleted, Nice');
+      cw.getWorkouts();
+    }, function(failure){
+      console.log('something broke');
+    });
+
+  };
 
 
 }); //end of create controller

@@ -41,6 +41,15 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/createworkout/editworkout', {
+      templateUrl: '/views/templates/editworkouts.html',
+      controller: 'CreateWorkoutController as cw',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+    })
     .when('/createexercise', {
       templateUrl: '/views/templates/createexercise.html',
       controller: 'CreateController as cc',
