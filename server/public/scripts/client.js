@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
@@ -70,7 +70,15 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
-
+    .when('/completeworkout/selected', {
+      templateUrl: '/views/templates/completeworkoutselect.html',
+      controller: 'ViewCompleteController as vc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
+    })
     .otherwise({
       redirectTo: 'home'
     });

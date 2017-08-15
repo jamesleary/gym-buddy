@@ -33,6 +33,14 @@ main{
 
 .container p{
   margin-top : 14px;
+
+}
+/*server/public/styles/style.css
+server/images/gym_buddy_backgroundimage.jpg*/
+body{
+  /*background-image: url("/../images/homepage.jpg");*/
+  background-size: 414px 736px;
+  background-repeat: no-repeat;
 }
 
 .message:nth-child(odd) {
