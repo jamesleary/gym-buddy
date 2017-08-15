@@ -7,12 +7,13 @@
         <script type="text/javascript" src="vendors/material/angular.min.js"></script>
         <script type="text/javascript" src="vendors/material/angular-route.min.js"></script>
         <!-- Angular Material -->
-
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="vendors/material/angular-material.min.css" rel="stylesheet" type="text/css">
         <script src="vendors/material/angular-animate.min.js" charset="utf-8"></script>
         <script src="vendors/material/angular-aria.min.js" charset="utf-8"></script>
         <script src="vendors/material/angular-messages.min.js" charset="utf-8"></script>
         <script src="vendors/material/angular-material.min.js" charset="utf-8"></script>
+        <script src="vendors/angular-material-icons.min.js" charset="utf-8"></script>
         <!-- Client Side code -->
 
         <script type="text/javascript" src="scripts/client.js"></script>
@@ -23,22 +24,61 @@
         <script type="text/javascript" src="scripts/controllers/complete.controller.js"></script>
         <script type="text/javascript" src="scripts/controllers/create.exercise.controller.js"></script>
         <script type="text/javascript" src="scripts/controllers/create.workout.controller.js"></script>
+        <script type="text/javascript" src="scripts/controllers/navbar.controller.js"></script>
         <script type="text/javascript" src="scripts/services/user.service.js"></script>
         <script type="text/javascript" src="scripts/services/completeWorkout.service.js"></script>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="vendors/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="vendors/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
-
-
-
+        <link href=“https://fonts.googleapis.com/icon?family=Material+Icons” rel=“stylesheet”>
+        <link rel="stylesheet" href="vendors/angular-material-icons.css">
         <link rel="stylesheet" href="styles/style.css">
-
     </head>
 
-    <body ng-app="myApp">
-      <header ng-include="'/views/partials/header.html'"></header>
-      <main ng-view></main>
+    <body ng-app="myApp" layout="column" style="height:700px">
+      <md-toolbar  class="md-hue-4" style="height:100%" ng-controller="NavBarController as nb">
+        <div class="md-toolbar-tools" layout="row">
+          <md-button layout-align="start center" aria-label="Open sidenav" ng-click="nb.userService.toggleLeft()" class="md-icon-button" ng-disabled="false">
+            <md-icon class="material-icons">menu</md-icon>
+          </md-button>
+          <div flex layout="row" layout-align="end center">
+            <h1>gym buddy</h1>
+            <md-button aria-label="Logo" ng-click="nb.userService.toggleLeft()" class="md-icon-button" ng-disabled="false">
+              <md-icon class="material-icons">menu</md-icon>
+            </md-button>
+          </div>
+          <div layout="column" ng-cloak>
+            <section layout="row" flex>
+              <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
+              md-disable-backdrop md-whiteframe="4">
 
+              <md-content layout-margin layout-align="center">
+                   <md-card>
+                     <md-card-content>
+         <md-card-actions layout="column" layout-align="center center">
+           <!-- If user is not logged in the disable Dashboard and Profile -->
+           <md-button class="md-secondary md-raised" ng-disabled="false" ng-click="nb.userService.toggleLeft()"><a href="#/user">Home </a></md-button>
+           <md-button class="md-secondary md-raised" ng-click="nb.userService.toggleLeft()"> <a href="#/completeworkout">Select a Workout</a></md-button>
+           <md-button class="md-secondary md-raised" ng-click="nb.userService.toggleLeft()"> <a href="#/createworkout">Create a Workout</a> </md-button>
+           <md-button class="md-secondary md-raised" ng-click="nb.userService.toggleLeft()"> <a href="#/createexercise">Create an Exercise</a> </md-button>
+           <md-button class="md-secondary md-raised" ng-click="nb.userService.toggleLeft()"> <a href="#/completeworkout">View Completed Workouts</a> </md-button>
+           <md-button class="md-primary md-raised" ng-click="nb.userService.toggleLeft(); nb.userService.logout()">Log Out</md-button>
+                      <md-button layout-align="end bottom" ng-click="nb.userService.toggleLeft()" class="md-warn md-raised">
+                        <md-icon class="material-icons">close</md-icon>
+                       </md-button>
+                    </md-card-actions>
+                  </md-card-content>
+                </md-card>
+              </md-content>
+            </md-sidenav>
+            </section>
+            </div>
+          </div>
+
+
+      
+      <main ng-view></main>
+</md-toolbar>
     </body>
 </html>

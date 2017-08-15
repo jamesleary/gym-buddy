@@ -1,7 +1,14 @@
-myApp.factory('UserService', function($http, $location){
+myApp.factory('UserService', function($http, $location, $mdSidenav){
   console.log('UserService Loaded');
 
   var userObject = {};
+
+  function buildToggler(componentId) {
+  return function() {
+    $mdSidenav(componentId).toggle();
+  };
+}
+
 
   return {
     userObject : userObject,
@@ -23,6 +30,9 @@ myApp.factory('UserService', function($http, $location){
         $location.path("/home");
       });
     },
+
+    toggleLeft : buildToggler('left'),
+    toggleRight : buildToggler('right'),
 
     logout : function() {
       console.log('UserService -- logout');
