@@ -1,17 +1,20 @@
 body, html {
   margin: 0;
   padding: 0;
-
+  text-transform: lowercase;
 }
 .md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
-  background-color: gray;
+  background-color: #000099;
+  color: #ff9900;
 }
 .instructions .container h1 {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
 }
-
+button , input, md-button{
+  text-transform: lowercase;
+}
 .instructions {
   background-color: #333333;
   color: #DDDDDD;
@@ -39,6 +42,7 @@ body{
   /*background-image: url("/../images/homepage.jpg");*/
   background-size: 414px 736px;
   background-repeat: no-repeat;
+  text-transform: lowercase;
 }
 
 .message:nth-child(odd) {

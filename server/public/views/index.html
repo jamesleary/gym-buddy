@@ -36,7 +36,7 @@
         <link rel="stylesheet" href="styles/style.css">
     </head>
 
-    <body ng-app="myApp" layout="column" style="height:700px">
+    <body ng-app="myApp" layout="column" style="height:100%">
       <md-toolbar  class="md-hue-4" style="height:100%" ng-controller="NavBarController as nb">
         <div class="md-toolbar-tools" layout="row">
           <md-button layout-align="start center" aria-label="Open sidenav" ng-click="nb.userService.toggleLeft()" class="md-icon-button" ng-disabled="false">
@@ -67,6 +67,7 @@
                       <md-button layout-align="end bottom" ng-click="nb.userService.toggleLeft()" class="md-warn md-raised">
                         <md-icon class="material-icons">close</md-icon>
                        </md-button>
+                       <img src="/../images/logo.png" alt="">
                     </md-card-actions>
                   </md-card-content>
                 </md-card>
@@ -75,9 +76,6 @@
             </section>
             </div>
           </div>
-
-
-      
       <main ng-view></main>
 </md-toolbar>
     </body>

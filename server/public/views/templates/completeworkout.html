@@ -21,8 +21,9 @@
     <td>{{complete.name}}</td>
     <td>{{complete.unique_name}}</td>
     <td>{{complete.workout_date}}</td>
-  <td><button ng-click="vc.getCompleteSelectedWorkout(complete)"> O</button></td>
-  <td><button ng-click="vc.deleteCompletedWorkout(complete)">X</button></td></tr>
+  <td><md-button ng-click="vc.getCompleteSelectedWorkout(complete)">
+    <md-icon class="material-icons">view_day</md-icon></md-button></td>
+  <td><md-button ng-click="vc.deleteCompletedWorkout(complete)"><md-icon class="material-icons">delete</md-icon></md-button></td></tr>
 </tbody>
 
 </table>
