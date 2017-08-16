@@ -55,7 +55,7 @@ router.post('/', function(req, res){
       // errorMakingQuery is a boolean, result is an object
       db.query(queryText, [cw.name, cw.exercise_one, cw.exercise_two, cw.exercise_three, cw.exercise_four, cw.exercise_five, cw.exercise_six,
         cw.reps_one, cw.reps_two, cw.reps_three, cw.reps_four, cw.reps_five, cw.reps_six,req.user.id, cw.weight_one, cw.weight_two, cw.weight_three, cw.weight_four,
-        cw.weight_five, cw.weight_six, cw.uniqueWorkout, cw.workoutDate, cw.workoutNotes], function(errorMakingQuery, result){
+        cw.weight_five, cw.weight_six, cw.uniqueWorkout, cw.workout_date, cw.workoutNotes], function(errorMakingQuery, result){
         done();
         if(errorMakingQuery){
           console.log('Attempted to query with', queryText);

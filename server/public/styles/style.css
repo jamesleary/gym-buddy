@@ -3,9 +3,23 @@ body, html {
   padding: 0;
   text-transform: lowercase;
 }
+
+table.md-table:not(.md-row-select) td.md-cell:nth-child(n+2):nth-last-child(n+2), table.md-table:not(.md-row-select) th.md-column:nth-child(n+2):nth-last-child(n+2){
+  padding: 0 10px 0 0;
+}
+
+table.md-table td.md-cell:last-child, table.md-table th.md-column:last-child {
+  padding: 0 5px 0 0;
+}
+
 .md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
-  background-color: #000099;
-  color: #ff9900;
+  /*background-color: #000099;
+  color: #ff9900;*/
+  background-color: grey;
+  color: black;
+}
+md-table-container{
+max-width: 100%;
 }
 .instructions .container h1 {
   font-size: 32px;

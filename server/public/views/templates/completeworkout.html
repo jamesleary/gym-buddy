@@ -5,25 +5,43 @@
 <input class='completeSearch' type="text" ng-model="search_workout" placeholder="Search by Name, Unique Name, or Date">
 </div>
 
-
-<table class = "table table-responsive">
-<thead>
-  <tr>
-    <th>Workout Name</th>
-    <th>Unique Name</th>
-    <th>Date</th>
-    <th>View Details</th>
-    <th>Delete</th>
-  </tr>
-</thead>
-<tbody >
-  <tr ng-repeat= "complete in vc.completeWorkouts | filter : search_workout">
-    <td>{{complete.name}}</td>
-    <td>{{complete.unique_name}}</td>
-    <td>{{complete.workout_date}}</td>
-  <td><md-button ng-click="vc.getCompleteSelectedWorkout(complete)">
-    <md-icon class="material-icons">view_day</md-icon></md-button></td>
-  <td><md-button ng-click="vc.deleteCompletedWorkout(complete)"><md-icon class="material-icons">delete</md-icon></md-button></td></tr>
-</tbody>
-
-</table>
+<md-table-container >
+  <table md-table>
+    <thead md-head>
+      <tr md-row>
+        <th md-column md-order-by="{{complete.name}}"><span>Workout Name</span></th>
+        <th md-column md-order-by="{{complete.unique_name}}"><span>Unique Name</span></th>
+        <th md-column >Date</th>
+        <th md-column ></th>
+      </tr>
+    </thead>
+    <tbody md-body >
+      <tr md-row ng-repeat="complete in vc.completeWorkouts | filter: search_workout | orderBy: 'workout_date' ">
+        <td md-cell>{{complete.name}}</td>
+        <td md-cell>{{complete.unique_name}}</td>
+        <td md-cell>{{complete.workout_date | date}}</td>
+        <td md-cell>
+          <md-menu>
+              <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vc.openMenu($mdMenu, $event)">
+                 <md-icon md-menu-origin>more_vert</md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item>
+                  <md-button ng-click="vc.getCompleteSelectedWorkout(complete)">
+                    <md-icon  md-menu-align-target>view_day</md-icon>
+                    View Detail
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button  ng-click="vc.deleteCompletedWorkout(complete)">
+                    <md-icon>delete</md-icon>
+                    Delete
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
