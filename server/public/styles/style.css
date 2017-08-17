@@ -4,7 +4,9 @@ body, html {
   text-transform: lowercase;
   font-size: 18px;
 }
-
+.exerciseinput{
+  width:250px;
+}
 table.md-table:not(.md-row-select) td.md-cell:nth-child(n+2):nth-last-child(n+2), table.md-table:not(.md-row-select) th.md-column:nth-child(n+2):nth-last-child(n+2){
   padding: 0 10px 0 0;
 }
@@ -14,13 +16,22 @@ table.md-table td.md-cell  {
 .material-icons {
   font-size: 18px;
 }
-
+ md-input-container .md-input  {
+  width: 150px;
+}
+md-input-container .md-input {
+  height: 20px;
+}
+table.md-table th.md-column {
+  font-size: 20px;
+}
 table.md-table td.md-cell:last-child, table.md-table th.md-column:last-child {
   padding: 0 5px 0 0;
 }
-/*md-input-container .md-input {
-  width:100%;
-}*/
+.buttonscenter {
+  position: absolute;
+  margin-left: 25%;
+}
 .md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
   /*background-color: #000099;
   color: #ff9900;*/
