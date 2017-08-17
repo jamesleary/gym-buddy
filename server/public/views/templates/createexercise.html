@@ -1,12 +1,28 @@
 
 <a href="#/user">Back</a>
+<div class="createExerciseDiv">
+    <div class="exerciseContent">
+  <md-input-container>
+    <label>Select a Class</label>
+    <md-select ng-model="cc.currentClass">
+      <md-option><em>None</em></md-option>
+      <md-option ng-repeat="specificClass in cc.classes" ng-value="specificClass.class">
+        {{specificClass.class}}
+      </md-option>
+    </md-select>
+  </md-input-container>
 
-<select placeholder="Select Class" ng-model="cc.currentClass" ng-options="specificClass.class for specificClass in cc.classes" ></select>
 
 
-<div> <input type="text" ng-model="exerciseName" placeholder="Enter Exercise Name Here" class="exerciseInput"></div>
 
 
-<button ng-click="cc.postExercises(cc.currentClass, exerciseName)">Create Custom Exercise</button>
 
-<button ng-click="cc.editExercises()">Edit/Delete Current Exercises</button>
+    <md-input-container >
+      <label>enter exercise name</label>
+      <input ng-model="exerciseName">
+    </md-input-container>
+
+    <md-button ng-click="cc.postExercises(cc.currentClass, exerciseName)"><md-icon>control_point</md-icon>add</md-button>
+
+    <md-button ng-click="cc.editExercises()"><md-icon>edit</md-icon>Edit</md-button></div>
+  </div>

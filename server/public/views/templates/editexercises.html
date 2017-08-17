@@ -1,44 +1,56 @@
 <a href="#/createexercise">Back</a>
-<div class="">Select a class to filter exercises</div>
-<select placeholder="Select Class" ng-model="cc.currentClass" ng-options="specificClass.class for specificClass in cc.classes" ></select>
+<!-- <div class="">Select a class to filter exercises</div>
+<select placeholder="Select Class" ng-model="cc.currentClass" ng-options="specificClass.class for specificClass in cc.classes" ></select> -->
+<md-input-container>
+  <label>Select a Class</label>
+  <md-select ng-model="cc.currentClass.class">
+    <md-option><em>None</em></md-option>
+    <md-option ng-repeat="specificClass in cc.classes" ng-value="specificClass.class">
+      {{specificClass.class}}
+    </md-option>
+  </md-select>
+</md-input-container>
 
+<md-table-container >
+  <table md-table >
+    <thead md-head>
+      <tr md-row>
+        <th md-column><span>Exercise Name</span></th>
+        <th md-column><span>Class</span></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody md-body >
+      <tr ng-repeat= "exercise in cc.exerciseList | filter: {class:cc.currentClass.class}">
+        <td md-cell><span editable-text="exercise.exercise_name" e-name="exercise_name" e-form="rowform">{{exercise.exercise_name}}</span></td>
+        <td md-cell><span editable-select="exercise.class" e-name="class" e-form="rowform" e-ng-options="specificClass.class as specificClass.class for specificClass in cc.classes">{{exercise.class}}</span></td>
+        <td>
 
-<table class = "table table-responsive">
-<thead>
-  <tr>
-    <th>Exercise Name</th>
-    <th>Class</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-</thead>
-<tbody > <!-- class is the property of exercise that we are filtering on-->
-  <tr ng-repeat= "exercise in cc.exerciseList | filter: {class:cc.currentClass.class}">
-    <td><input ng-model="exercise.exercise_name"></td>
-    <td><input ng-model="exercise.class"></td>
-    <td><button ng-click="cc.editExercise(exercise)">Edit</button></td>
-    <td><button ng-click="cc.deleteExercise(exercise)">Delete</button></td>
-
-</tbody>
-
-</table>
-
-<md-menu>
-    <md-button aria-label="Open menu" class="md-icon-button" ng-click="vc.openMenu($mdMenu, $event)">
-       <md-icon md-menu-origin>more_vert</md-icon>
-    </md-button>
-    <md-menu-content width="4">
-      <md-menu-item>
-        <md-button ng-click="vc.getCompleteSelectedWorkout(complete)">
-          <md-icon  md-menu-align-target>view_day</md-icon>
-          View Detail
-        </md-button>
-      </md-menu-item>
-      <md-menu-item>
-        <md-button  ng-click="vc.deleteCompletedWorkout(complete)">
-          <md-icon>delete</md-icon>
-          Delete
-        </md-button>
-      </md-menu-item>
-    </md-menu-content>
-  </md-menu>
+        <form editable-form name="rowform" onbeforesave="saveUser()" onaftersave="cc.editExercise(exercise)"ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == exercise">
+          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary" ><md-icon>done</md-icon></button>
+          <button type="button" ng-disabled="rowform.$waiting" class="btn btn-danger" ng-click="rowform.$cancel()" class="btn btn-default"><md-icon>clear</md-icon></button>
+        </form>
+        <md-menu ng-show="!rowform.$visible">
+          <md-button aria-label="Open menu" class="md-icon-button" ng-click="cc.openMenu($mdMenu, $event)">
+             <md-icon md-menu-origin>more_vert</md-icon>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button ng-click="rowform.$show()">
+                <md-icon  md-menu-align-target>edit</md-icon>
+                Click to Edit
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button  ng-click="cc.deleteExercise(exercise)">
+                <md-icon>delete</md-icon>
+                Delete
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>

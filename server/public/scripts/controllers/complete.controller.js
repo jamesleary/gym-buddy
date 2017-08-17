@@ -3,13 +3,7 @@ myApp.controller('ViewCompleteController', function($http,$location, CompleteWor
   console.log('ViewCompleteController created');
   var vc = this;
   vc.data = CompleteWorkoutService.data;
-  vc.selected = [];
 
-  vc.query = {
-    order: 'name',
-    limit: 5,
-    page: 1
-  };
 
   vc.openMenu = function($mdMenu, ev) {
        originatorEv = ev;

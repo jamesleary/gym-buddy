@@ -4,6 +4,17 @@
         <title>Gym-Buddy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- style sheets -->
+        <link rel="stylesheet" href="vendors/md-data-table.min.css">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="vendors/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
+        <link href=“https://fonts.googleapis.com/icon?family=Material+Icons” rel=“stylesheet”>
+        <link rel="stylesheet" href="vendors/angular-material-icons.css">
+        <link rel="stylesheet" href="vendors/xeditable.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        
         <script type="text/javascript" src="vendors/material/angular.min.js"></script>
         <script type="text/javascript" src="vendors/material/angular-route.min.js"></script>
         <!-- Angular Material -->
@@ -15,6 +26,7 @@
         <script src="vendors/material/angular-material.min.js" charset="utf-8"></script>
         <script src="vendors/angular-material-icons.min.js" charset="utf-8"></script>
         <script src="vendors/md-data-table.min.js" charset="utf-8"></script>
+        <script src="vendors/xeditable.min.js" charset="utf-8"></script>
         <!-- Client Side code -->
 
         <script type="text/javascript" src="scripts/client.js"></script>
@@ -28,18 +40,12 @@
         <script type="text/javascript" src="scripts/controllers/navbar.controller.js"></script>
         <script type="text/javascript" src="scripts/services/user.service.js"></script>
         <script type="text/javascript" src="scripts/services/completeWorkout.service.js"></script>
-        <link rel="stylesheet" href="vendors/md-data-table.min.css">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="vendors/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
-        <link href=“https://fonts.googleapis.com/icon?family=Material+Icons” rel=“stylesheet”>
-        <link rel="stylesheet" href="vendors/angular-material-icons.css">
-        <link rel="stylesheet" href="styles/style.css">
+
+
     </head>
 
     <body ng-app="myApp" layout="column" style="height:100%">
-
+      <!-- sidenavbar -->
       <md-toolbar  class="md-hue-4" style="height:100%" ng-controller="NavBarController as nb">
         <div class="md-toolbar-tools" layout="row">
           <md-button layout-align="start center" aria-label="Open sidenav" ng-click="nb.userService.toggleLeft()" class="md-icon-button" ng-disabled="false">
@@ -58,7 +64,7 @@
               <md-content layout-margin layout-align="center">
 
 
-           <md-card-actions layout="column" layout-align="center center">
+           <md-card-actions flex layout="column" layout-align="center center">
            <!-- If user is not logged in the disable Dashboard and Profile -->
            <md-button class="md-secondary md-raised" ng-disabled="false" ng-click="nb.userService.toggleLeft()"><a href="#/user">Home </a></md-button>
            <md-button class="md-secondary md-raised" ng-click="nb.userService.toggleLeft()"> <a href="#/completeworkout">Select a Workout</a></md-button>

@@ -1,15 +1,21 @@
-myApp.controller('CreateController', function($http,$location) {
+myApp.controller('CreateController', function($http,$location,$scope) {
+
+
 
   console.log('CreateController created');
   var cc = this;
 
+  cc.openMenu = function($mdMenu, ev) {
+       originatorEv = ev;
+       $mdMenu.open(ev);
+     };
   cc.editExercises = function(){
     console.log('go to edit page');
     $location.path('/createexercise/viewallexercises');
   };
 
   cc.getClasses = function (){
-      console.log('click get exercise function');
+      console.log('click get classes function');
 
       $http.get('/createExercise').then(function(response){
         console.log(response.data.classes);

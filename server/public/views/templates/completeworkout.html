@@ -4,7 +4,7 @@
 <div>
 </div>
 <md-input-container >
-       <label>search by name or date</label>
+       <label>search by name</label>
        <input ng-model="search_workout">
      </md-input-container>
 <md-table-container id="completeTable">
@@ -25,7 +25,7 @@
         <td md-cell>
           <md-menu>
               <md-button aria-label="Open menu" class="md-icon-button" ng-click="vc.openMenu($mdMenu, $event)">
-                 <md-icon md-menu-origin>more_vert</md-icon>
+                 <md-icon id="morevert"md-menu-origin>more_vert</md-icon>
               </md-button>
               <md-menu-content width="4">
                 <md-menu-item>

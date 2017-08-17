@@ -2,22 +2,29 @@ body, html {
   margin: 0;
   padding: 0;
   text-transform: lowercase;
+  font-size: 18px;
 }
 
 table.md-table:not(.md-row-select) td.md-cell:nth-child(n+2):nth-last-child(n+2), table.md-table:not(.md-row-select) th.md-column:nth-child(n+2):nth-last-child(n+2){
   padding: 0 10px 0 0;
 }
+table.md-table td.md-cell  {
+  font-size: 18px;
+}
+.material-icons {
+  font-size: 18px;
+}
 
 table.md-table td.md-cell:last-child, table.md-table th.md-column:last-child {
   padding: 0 5px 0 0;
 }
-md-input-container .md-input {
-  width:400px;
-}
+/*md-input-container .md-input {
+  width:100%;
+}*/
 .md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
   /*background-color: #000099;
   color: #ff9900;*/
-  background-color: grey;
+  background-color: orange;
   color: black;
 }
 md-table-container{
@@ -36,16 +43,38 @@ button , input, md-button{
   color: #DDDDDD;
   padding: 15px;
 }
+
 .workoutNotesSelected{
     height: 150px;
     overflow: scroll;
     width: 200px;
     position: absolute;
     margin: auto;
-    top: 100px;
+    top: 125px;
     right: 0;
     bottom: 0;
     left: 0;
+}
+#morevert {
+  font-size: 30px;
+}
+.exerciseContent{
+  width: 300px;
+  position: absolute;
+  margin: auto;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 40px;
+}
+.createExerciseDiv {
+  width: 300px;
+  position: absolute;
+  margin: auto;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 #completeTable{
   height: 450px;
@@ -64,7 +93,6 @@ button , input, md-button{
 
 .container p{
   margin-top : 14px;
-
 }
 /*server/public/styles/style.css
 server/images/gym_buddy_backgroundimage.jpg*/
