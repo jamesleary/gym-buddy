@@ -1,33 +1,56 @@
 
 <a href="#/completeworkout">Back</a>
 
-<div >
+<div>
   <p>{{vc.data.selectedWorkout.name}}</p>
   <p>{{vc.data.selectedWorkout.unique_name}}</p>
-  <p>{{vc.data.selectedWorkout.workout_date}}</p>
+  <p>{{vc.data.selectedWorkout.workout_date | date}}</p>
 </div>
-<table class = "table table-responsive" ng-model="complete_table">
-<thead>
-  <tr>
-    <thead>
-      <tr>
-        <th>Exercise Name</th>
-        <th>Weight</th>
-        <th>Reps</th>
+
+<md-table-container >
+  <table md-table ng-model="complete_table">
+    <thead md-head>
+      <tr md-row>
+        <th md-column><span>exercise</span></th>
+        <th md-column><span>weight</span></th>
+        <th md-column>reps</th>
       </tr>
     </thead>
-  </tr>
-</thead>
-<tbody>
-<tr><td>{{vc.data.selectedWorkout.exercise_one}}</td><td>{{vc.data.selectedWorkout.weight_one}}</td><td>{{vc.data.selectedWorkout.reps_one}}</td></tr>
-<tr><td>{{vc.data.selectedWorkout.exercise_two}}</td></td><td>{{vc.data.selectedWorkout.weight_two}}</td><td>{{vc.data.selectedWorkout.reps_two}}</td></tr>
-<tr><td>{{vc.data.selectedWorkout.exercise_three}}</td></td><td>{{vc.data.selectedWorkout.weight_three}}</td><td>{{vc.data.selectedWorkout.reps_three}}</td></tr>
-<tr><td>{{vc.data.selectedWorkout.exercise_four}}</td></td><td>{{vc.data.selectedWorkout.weight_four}}</td><td>{{vc.data.selectedWorkout.reps_four}}</td></tr>
-<tr><td>{{vc.data.selectedWorkout.exercise_five}}</td></td><td>{{vc.data.selectedWorkout.weight_five}}</td><td>{{vc.data.selectedWorkout.reps_five}}</td></tr>
-<tr><td>{{vc.data.selectedWorkout.exercise_six}}</td><td>{{vc.data.selectedWorkout.weight_six}}</td><td>{{vc.data.selectedWorkout.reps_six}}</td></tr>
-</tbody>
+    <tbody md-body >
+      <tr>
+        <td md-cell>{{vc.data.selectedWorkout.exercise_one}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.weight_one}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.reps_one}}</td>
+      </tr>
+      <tr>
+        <td md-cell>{{vc.data.selectedWorkout.exercise_two}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.weight_two}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.reps_two}}</td>
+      </tr>
+      <tr>
+        <td md-cell>{{vc.data.selectedWorkout.exercise_three}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.weight_three}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.reps_three}}</td>
+      </tr>
+      <tr>
+        <td md-cell>{{vc.data.selectedWorkout.exercise_four}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.weight_four}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.reps_four}}</td>
+      </tr>
+      <tr>
+        <td md-cell>{{vc.data.selectedWorkout.exercise_five}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.weight_five}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.reps_five}}</td>
+      </tr>
+      <tr>
+        <td md-cell>{{vc.data.selectedWorkout.exercise_six}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.weight_six}}</td>
+        <td md-cell>{{vc.data.selectedWorkout.reps_six}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
 
-
-<div class="">
+<div class="workoutNotesSelected">
   <p>{{vc.data.selectedWorkout.workout_notes}}</p>
 </div>

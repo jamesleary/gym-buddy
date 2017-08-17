@@ -7,8 +7,8 @@
        <label>search by name or date</label>
        <input ng-model="search_workout">
      </md-input-container>
-<md-table-container >
-  <table md-table>
+<md-table-container id="completeTable">
+  <table md-table >
     <thead md-head>
       <tr md-row>
         <th md-column md-order-by="{{complete.name}}"><span>Workout Name</span></th>
@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody md-body >
-      <tr md-row ng-repeat="complete in vc.completeWorkouts | filter: search_workout | orderBy: 'workout_date' ">
+      <tr md-row ng-repeat="complete in vc.completeWorkouts | filter: search_workout | orderBy: -'workout_date' ">
         <td md-cell>{{complete.name}}</td>
         <td md-cell>{{complete.unique_name}}</td>
         <td md-cell>{{complete.workout_date | date}}</td>

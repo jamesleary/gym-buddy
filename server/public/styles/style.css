@@ -36,7 +36,21 @@ button , input, md-button{
   color: #DDDDDD;
   padding: 15px;
 }
-
+.workoutNotesSelected{
+    height: 150px;
+    overflow: scroll;
+    width: 200px;
+    position: absolute;
+    margin: auto;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#completeTable{
+  height: 450px;
+  overflow-y: scroll;
+}
 #entryForm {
   margin-top: 14px;
 }
