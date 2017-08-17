@@ -22,3 +22,23 @@
 </tbody>
 
 </table>
+
+<md-menu>
+    <md-button aria-label="Open menu" class="md-icon-button" ng-click="vc.openMenu($mdMenu, $event)">
+       <md-icon md-menu-origin>more_vert</md-icon>
+    </md-button>
+    <md-menu-content width="4">
+      <md-menu-item>
+        <md-button ng-click="vc.getCompleteSelectedWorkout(complete)">
+          <md-icon  md-menu-align-target>view_day</md-icon>
+          View Detail
+        </md-button>
+      </md-menu-item>
+      <md-menu-item>
+        <md-button  ng-click="vc.deleteCompletedWorkout(complete)">
+          <md-icon>delete</md-icon>
+          Delete
+        </md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>

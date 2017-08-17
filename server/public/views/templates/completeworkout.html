@@ -2,9 +2,11 @@
 <a href="#/user">Back</a>
 
 <div>
-<input class='completeSearch' type="text" ng-model="search_workout" placeholder="Search by Name, Unique Name, or Date">
 </div>
-
+<md-input-container >
+       <label>search by name or date</label>
+       <input ng-model="search_workout">
+     </md-input-container>
 <md-table-container >
   <table md-table>
     <thead md-head>
@@ -22,7 +24,7 @@
         <td md-cell>{{complete.workout_date | date}}</td>
         <td md-cell>
           <md-menu>
-              <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="vc.openMenu($mdMenu, $event)">
+              <md-button aria-label="Open menu" class="md-icon-button" ng-click="vc.openMenu($mdMenu, $event)">
                  <md-icon md-menu-origin>more_vert</md-icon>
               </md-button>
               <md-menu-content width="4">
