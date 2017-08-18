@@ -1,122 +1,123 @@
 
-<a href="#/user">Back</a>
 
 
+<div class="workoutnameinput">
 <md-input-container class="exerciseinput">
   <label>Enter Workout Name</label>
   <input class="exerciseinput"ng-model="exercise.workout_name">
 </md-input-container>
+</div>
+
 <md-table-container>
-<table md-table class="createExerciseTable">
-  <thead md-head>
-  <tr md-row>
-    <th md-column>Select Exercise</th>
-    <th md-column>Enter # of Reps per Set</th>
-  </tr>
-</thead>
-<tbody md-body>
-  <tr md-row>
-    <td md-cell><md-input-container>
-      <label>exercise 1</label>
-      <md-select ng-model="exercise.workout_one">
-        <md-option><em>None</em></md-option>
-        <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
-        </md-option>
-      </md-select>
-    </md-input-container></td>
-    <td md-cell>
-      <md-input-container id="reps">
-      <label>rep exercise 1</label>
-      <input id="reps"ng-model="exercise.reps_one">
-    </md-input-container></td>
-  </tr>
+  <table md-table class="createExerciseTable">
+    <thead md-head>
+      <tr md-row>
+        <th md-column>Select Exercise</th>
+        <th md-column>Enter # of Reps per Set</th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row>
+        <td md-cell><md-input-container>
+          <label>exercise 1</label>
+          <md-select ng-model="exercise.workout_one">
 
+            <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
+            </md-option>
+          </md-select>
+        </md-input-container></td>
+        <td md-cell>
+          <md-input-container id="reps">
+            <label>rep exercise 1</label>
+            <input id="reps"ng-model="exercise.reps_one">
+          </md-input-container></td>
+        </tr>
+        <tr md-row>
+          <td md-cell><md-input-container>
+            <label>exercise 2</label>
+            <md-select ng-model="exercise.workout_two">
 
+              <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
+              </md-option>
+            </md-select>
+          </md-input-container></td>
 
-  <tr md-row>
-    <td md-cell><md-input-container>
-      <label>exercise 2</label>
-      <md-select ng-model="exercise.workout_two">
-        <md-option><em>None</em></md-option>
-        <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
-        </md-option>
-      </md-select>
-    </md-input-container></td>
+          <td md-cell><md-input-container id="reps">
+            <label>rep exercise 2</label>
+            <input id="reps" ng-model="exercise.reps_two">
+          </md-input-container></td>
+        </tr>
 
-    <td md-cell><md-input-container id="reps">
-      <label>rep exercise 2</label>
-      <input id="reps" ng-model="exercise.reps_two">
-    </md-input-container></td>
-  </tr>
+        <tr md-row>
+          <td md-cell><md-input-container>
+            <label>exercise 3</label>
+            <md-select ng-model="exercise.workout_three">
 
-  <tr md-row>
-    <td md-cell><md-input-container>
-      <label>exercise 3</label>
-      <md-select ng-model="exercise.workout_three">
-        <md-option><em>None</em></md-option>
-        <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
-        </md-option>
-      </md-select>
-    </md-input-container></td>
+              <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
+              </md-option>
+            </md-select>
+          </md-input-container></td>
 
-    <td md-cell><md-input-container id="reps" >
-      <label>rep exercise 3</label>
-      <input id="reps" ng-model="exercise.reps_three">
-    </md-input-container></td>
-  </tr>
-  <tr md-row>
-    <td md-cell><md-input-container>
-      <label>exercise 4</label>
-      <md-select ng-model="exercise.workout_four">
-        <md-option><em>None</em></md-option>
-        <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
-        </md-option>
-      </md-select>
-    </md-input-container></td>
+          <td md-cell><md-input-container id="reps" >
+            <label>rep exercise 3</label>
+            <input id="reps" ng-model="exercise.reps_three">
+          </md-input-container></td>
+        </tr>
+        <tr md-row>
+          <td md-cell><md-input-container>
+            <label>exercise 4</label>
+            <md-select ng-model="exercise.workout_four">
 
-    <td md-cell><md-input-container id="reps">
-      <label>rep exercise 4</label>
-      <input id="reps" ng-model="exercise.reps_four">
-    </md-input-container></td>
-  </tr>
-  <tr md-row>
-    <td md-cell><md-input-container>
-      <label>exercise 5</label>
-      <md-select ng-model="exercise.workout_five">
-        <md-option><em>None</em></md-option>
-        <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
-        </md-option>
-      </md-select>
-    </md-input-container></td>
+              <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
+              </md-option>
+            </md-select>
+          </md-input-container></td>
 
-    <td md-cell><md-input-container id="reps">
-      <label>rep exercise 5</label>
-      <input id="reps" ng-model="exercise.reps_five">
-    </md-input-container></td>
-  </tr>
-  <tr md-row>
-      <td md-cell><md-input-container >
-      <label>exercise 6</label>
-      <md-select ng-model="exercise.workout_six">
-        <md-option><em>None</em></md-option>
-        <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
-        </md-option>
-      </md-select>
-    </md-input-container>
-  </td>
+          <td md-cell><md-input-container id="reps">
+            <label>rep exercise 4</label>
+            <input id="reps" ng-model="exercise.reps_four">
+          </md-input-container></td>
+        </tr>
+        <tr md-row>
+          <td md-cell><md-input-container>
+            <label>exercise 5</label>
+            <md-select ng-model="exercise.workout_five">
 
-  <td md-cell><md-input-container id="reps">
-    <label>rep exercise 6</label>
-    <input id="reps" ng-model="exercise.reps_six">
-  </md-input-container></td>
-  </tr>
-</tbody>
+              <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
+              </md-option>
+            </md-select>
+          </md-input-container></td>
 
-</table>
+          <td md-cell><md-input-container id="reps">
+            <label>rep exercise 5</label>
+            <input id="reps" ng-model="exercise.reps_five">
+          </md-input-container></td>
+        </tr>
+        <tr md-row>
+          <td md-cell><md-input-container >
+            <label>exercise 6</label>
+            <md-select ng-model="exercise.workout_six">
+              <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </td>
+
+        <td md-cell><md-input-container id="reps">
+          <label>rep exercise 6</label>
+          <input id="reps" ng-model="exercise.reps_six">
+        </md-input-container></td>
+      </tr>
+    </tbody>
+
+  </table>
 </md-table-container>
 
-<div class="buttonscenter">
+<div layout="row" layout-align="center center">
 
-<div><md-button class="md-raised md-primary" ng-click="cw.createNewWorkout(exercise)">Create Workout</md-button></div>
-<div><md-button class="md-raised" ng-click="cw.goToEditWorkouts()"><i class="material-icons">fitness_center</i>View Workouts</md-button></div>
+  <div><md-button class="md-raised md-primary" ng-click="cw.createNewWorkout(exercise)">Create Workout</md-button></div>
+  <div><md-button class="md-raised" ng-click="cw.goToEditWorkouts()">View Workouts</md-button></div>
+</div>
+<div id="footer">
+<a href="#/user"><i class="material-icons">replay</i></a>
 </div>

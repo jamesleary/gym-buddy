@@ -1,8 +1,6 @@
 
-<a href="#/user">Back</a>
 
-<div>
-</div>
+
 <md-input-container >
        <label>search by name</label>
        <input ng-model="search_workout">
@@ -18,7 +16,7 @@
       </tr>
     </thead>
     <tbody md-body >
-      <tr md-row ng-repeat="complete in vc.completeWorkouts | filter: search_workout | orderBy: -'workout_date' ">
+      <tr md-row ng-repeat="complete in vc.completeWorkouts | filter: search_workout | orderBy: 'workout_date' ">
         <td md-cell>{{complete.name}}</td>
         <td md-cell>{{complete.unique_name}}</td>
         <td md-cell>{{complete.workout_date | date}}</td>
@@ -47,3 +45,7 @@
     </tbody>
   </table>
 </md-table-container>
+
+<div id="footer">
+<a href="#/user"><i class="material-icons">replay</i></a>
+</div>

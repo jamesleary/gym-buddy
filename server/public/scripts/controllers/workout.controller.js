@@ -1,11 +1,22 @@
-myApp.controller('WorkoutController', function($http) {
+myApp.controller('WorkoutController', function($http, $scope, $mdToast, $location) {
 
   console.log('WorkoutController created');
   var wc = this;
 
-wc.setCurrentWorkout = function (){
+  showSimpleToast = function() {
+    var toast = $mdToast.simple()
+          .textContent('Workout Completed!')
+          .action('Okay')
+          .position('top right')
+          .hideDelay(10000);
 
-};
+          $mdToast.show(toast).then(function(response){
+            if (response == 'ok'){
+              $location.path('/user');
+            }
+          });
+    };
+
 
 wc.getWorkouts = function (){
     console.log('click get workout function');
@@ -22,6 +33,7 @@ wc.postCompleteWorkout = function(currentWorkout){
   console.log('click post workout function', currentWorkout);
   $http.post('/workouts', currentWorkout).then(function(response) {
       console.log(response);
+      showSimpleToast();
     });
     wc.getWorkouts();
 };

@@ -1,6 +1,5 @@
-<a href="#/createexercise">Back</a>
-<!-- <div class="">Select a class to filter exercises</div>
-<select placeholder="Select Class" ng-model="cc.currentClass" ng-options="specificClass.class for specificClass in cc.classes" ></select> -->
+
+<div class='workoutnameinput '>
 <md-input-container>
   <label>Select a Class</label>
   <md-select ng-model="cc.currentClass.class">
@@ -10,6 +9,7 @@
     </md-option>
   </md-select>
 </md-input-container>
+</div>
 
 <md-table-container >
   <table md-table >
@@ -54,3 +54,7 @@
     </tbody>
   </table>
 </md-table-container>
+
+<div id="footer">
+<a href="#/createexercise"><i class="material-icons">replay</i></a>
+</div>

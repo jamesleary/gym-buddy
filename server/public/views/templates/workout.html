@@ -1,42 +1,96 @@
 
-<div><select placeholder="Select Workout Here" ng-model="wc.currentWorkout" ng-options = "workout.name for workout in wc.workouts">
+<div layout="column" layout-align="center start">
+<md-input-container>
+  <label>Select Workout here</label>
+  <md-select ng-model="wc.currentWorkout">
+    <md-option><em>None</em></md-option>
+    <md-option  ng-repeat="workout in wc.workouts" ng-value="workout">
+      {{workout.name}}
+    </md-option>
+  </md-select>
+</md-input-container>
 
-</select>
-
-
-<input type="text" ng-model="wc.currentWorkout.uniqueWorkout" placeholder="Name your workout">
-<input type="date" ng-model="wc.currentWorkout.workout_date">
+<md-input-container>
+  <label>Enter Unique Name</label>
+  <input ng-model="wc.currentWorkout.uniqueWorkout">
+</md-input-container>
 </div>
 
+<md-datepicker ng-model="wc.currentWorkout.workout_date" md-placeholder="Enter date"></md-datepicker>
 
-<table class = "table table-responsive" ng-if="wc.currentWorkout">
-<thead>
-  <tr>
-    <th>Exercise Name</th>
-    <th>Weight</th>
-    <th>Reps</th>
-    <th>Sets Completed</th>
+<table md-table ng-if="wc.currentWorkout">
+<thead md-head>
+  <tr md-row>
+    <th md-column>Exercise Name</th>
+    <th md-column>Weight</th>
+    <th md-column>Reps</th>
+    <th md-column>Sets</th>
   </tr>
 </thead>
 
     <!-- This repeat goes through all workouts brought from server and displays to the table, ng-if selects the current workout selected in drop down list -->
-  <tbody>
-    <tr><td>{{wc.currentWorkout.exercise_one}}</td><td><input ng-model="wc.currentWorkout.weight_one" placeholder="Amt Lifted" type="number"></td><td>{{wc.currentWorkout.reps_one}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
-    <tr><td>{{wc.currentWorkout.exercise_two}}</td><td><input ng-model="wc.currentWorkout.weight_two"placeholder="Amt Lifted"type="number"></td><td>{{wc.currentWorkout.reps_two}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
-    <tr><td>{{wc.currentWorkout.exercise_three}}</td><td><input ng-model="wc.currentWorkout.weight_three"placeholder="Amt Lifted"type="number"></td><td>{{wc.currentWorkout.reps_three}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
-    <tr><td>{{wc.currentWorkout.exercise_four}}</td><td><input ng-model="wc.currentWorkout.weight_four"placeholder="Amt Lifted"type="number"></td><td>{{wc.currentWorkout.reps_four}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
-    <tr><td>{{wc.currentWorkout.exercise_five}}</td><td><input ng-model="wc.currentWorkout.weight_five"placeholder="Amt Lifted"type="number"></td><td>{{wc.currentWorkout.reps_five}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
-    <tr><td>{{wc.currentWorkout.exercise_six}}</td><td><input ng-model="wc.currentWorkout.weight_six"placeholder="Amt Lifted"type="number"></td><td>{{wc.currentWorkout.reps_six}}</td><td><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+  <tbody md-body>
+    <tr md-row>
+      <td md-cell>{{wc.currentWorkout.exercise_one}}</td>
+      <td md-cell>
+        <md-input-container class="weightinput">
+          <label>amt lifted</label>
+          <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_one">
+        </md-input-container>
+      <td md-cell>{{wc.currentWorkout.reps_one}}</td>
+      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr md-row>
+      <td md-cell>{{wc.currentWorkout.exercise_two}}</td>
+      <td md-cell><md-input-container class="weightinput">
+        <label>amt lifted</label>
+        <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_two">
+      </md-input-container></td>
+      <td md-cell>{{wc.currentWorkout.reps_two}}</td>
+      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr md-row>
+      <td md-cell>{{wc.currentWorkout.exercise_three}}</td>
+      <td md-cell><md-input-container class="weightinput">
+        <label>amt lifted</label>
+        <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_three">
+      </md-input-container></td>
+      <td md-cell>{{wc.currentWorkout.reps_three}}</td>
+      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr md-row>
+      <td md-cell>{{wc.currentWorkout.exercise_four}}</td>
+      <td md-cell><md-input-container class="weightinput">
+        <label>amt lifted</label>
+        <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_four">
+      </md-input-container></td>
+      <td md-cell>{{wc.currentWorkout.reps_four}}</td>
+      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr md-row>
+      <td md-cell>{{wc.currentWorkout.exercise_five}}</td>
+      <td md-cell><md-input-container class="weightinput">
+        <label>amt lifted</label>
+        <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_five">
+      </md-input-container></td>
+      <td md-cell>{{wc.currentWorkout.reps_five}}</td>
+      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+    <tr md-row>
+      <td md-cell>{{wc.currentWorkout.exercise_six}}</td>
+      <td md-cell><md-input-container class="weightinput">
+        <label>amt lifted</label>
+        <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_six">
+      </md-input-container></td>
+      <td md-cell>{{wc.currentWorkout.reps_six}}</td>
+      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
   </tbody>
 </table>
 
+<div layout="column" layout-align="center center">
 
-<div><input type="text" style='height 200px; font-size 30px' placeholder="Workout Notes" ng-model="wc.currentWorkout.workoutNotes">
+<md-input-container class="workoutNotes">
+       <label>Workout Notes</label>
+       <textarea ng-model="wc.currentWorkout.workoutNotes" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+     </md-input-container>
+<md-button class="md-raised" type="button" name="button" ng-click= "wc.postCompleteWorkout(wc.currentWorkout)">Complete Workout</md-button>
 </div>
 
-<div><button type="button" name="button" ng-click= "wc.postCompleteWorkout(wc.currentWorkout)">Complete Workout</button>
-</div>
-
-<div>
-<a href="#/user">Back</a>
+<div id="footer">
+<a href="#/user"><i class="material-icons">replay</i></a>
 </div>
