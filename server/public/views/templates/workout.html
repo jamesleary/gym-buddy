@@ -87,8 +87,10 @@
 <md-input-container class="workoutNotes">
        <label>Workout Notes</label>
        <textarea ng-model="wc.currentWorkout.workoutNotes" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-     </md-input-container>
-<md-button class="md-raised" type="button" name="button" ng-click= "wc.postCompleteWorkout(wc.currentWorkout)">Complete Workout</md-button>
+</md-input-container>
+<md-input-container>
+<md-button class="md-raised" ng-click= "wc.postCompleteWorkout(wc.currentWorkout)">Complete Workout</md-button>
+</md-input-container>
 </div>
 
 <div id="footer">

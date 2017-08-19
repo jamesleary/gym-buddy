@@ -12,18 +12,19 @@
     </md-select>
   </md-input-container>
 
-    <md-input-container >
-      <label>enter exercise name</label>
-      <input ng-model="exerciseName">
-    </md-input-container>
-    </div>
-    <div layout="row" layout-align="center center" class="exercisebuttons">
-    <md-button style="height:100px" ng-click="cc.postExercises(cc.currentClass, exerciseName)"><md-icon id="control">control_point</md-icon></md-button>
+  <md-input-container >
+    <label>enter exercise name</label>
+    <input ng-model="exerciseName">
+  </md-input-container>
+</div>
 
-    <md-button style="height:100px" ng-click="cc.editExercises()"><md-icon id="control">edit</md-icon></md-button>
-  </div>
+<div layout="row" layout-align="center center" class="exercisebuttons">
+  <md-button flex="30" style="height:100px" ng-click="cc.postExercises(cc.currentClass, exerciseName)"><md-icon id="control">control_point</md-icon></md-button>
+
+  <md-button flex="30" style="height:100px" ng-click="cc.editExercises()"><md-icon id="control">edit</md-icon></md-button>
+</div>
 
 
-  <div id="footer">
+<div id="footer">
   <a href="#/user"><i class="material-icons">replay</i></a>
-  </div>
+</div>

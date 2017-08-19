@@ -1,10 +1,21 @@
-# Name of Project
+# gym buddy
 
 One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
 
 ## Built With
 
-List technologies and frameworks here
+SEAN Stack
+  Postgresql
+  express
+  angular
+  node
+
+  Angular Materials
+  Google fonts
+  passport
+  Heroku
+  
+
 
 ## Getting Started
 

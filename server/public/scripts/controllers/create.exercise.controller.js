@@ -1,56 +1,52 @@
 myApp.controller('CreateController', function($http,$location,$scope) {
 
-
-
   console.log('CreateController created');
   var cc = this;
 
   cc.openMenu = function($mdMenu, ev) {
-       originatorEv = ev;
-       $mdMenu.open(ev);
-     };
+    originatorEv = ev;
+    $mdMenu.open(ev);
+  };
   cc.editExercises = function(){
     console.log('go to edit page');
     $location.path('/createexercise/viewallexercises');
   };
 
   cc.getClasses = function (){
-      console.log('click get classes function');
+    console.log('click get classes function');
 
-      $http.get('/createExercise').then(function(response){
-        console.log(response.data.classes);
-        cc.classes = response.data.classes;
+    $http.get('/createExercise').then(function(response){
+      console.log(response.data.classes);
+      cc.classes = response.data.classes;
     });
   };
   cc.getClasses();
-
-
 
   cc.getExercises = function(){
     console.log('getExercises clicked');
     $http.get('/createExercise/exercise').then(function(response){
       console.log(response.data.exercises);
       cc.exerciseList = response.data.exercises;
-  });
+    });
   };
   cc.getExercises();
 
   cc.postExercises = function(currentClass, exerciseName){
     console.log('click post exercise function', currentClass.class, exerciseName);
     var exerciseToSend = {
-      class: currentClass.class,
+      class: currentClass,
       exerciseName: exerciseName
     };
     $http.post('/createExercise', exerciseToSend).then(function(response) {
-        console.log(response);
-      });
-      cc.getExercises();
+      console.log(response);
+    });
+    cc.getExercises();
   };
 
   cc.editExercise = function(updateExercise){
     console.log('edit click', updateExercise);
     $http.put('/createExercise/update/'+ updateExercise.id, updateExercise).then(function(response){
-        console.log('edit successful');
+      console.log('edit successful');
     });
     cc.getExercises();
   };
