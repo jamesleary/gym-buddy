@@ -1,10 +1,22 @@
-myApp.controller('ViewCompleteController', function($http,$location, CompleteWorkoutService) {
+myApp.controller('ViewCompleteController', function($http,$location, CompleteWorkoutService, $mdToast) {
 
   console.log('ViewCompleteController created');
   var vc = this;
   vc.data = CompleteWorkoutService.data;
 
+  deleteSelectedToast = function() {
+    var toast = $mdToast.simple()
+          .textContent('Selected Workout deleted!')
+          .action('Okay')
+          .position('top right')
+          .hideDelay(10000);
 
+          $mdToast.show(toast).then(function(response){
+            if (response == 'ok'){
+              $location.path('/completeworkout');
+            }
+          });
+    };
   vc.openMenu = function($mdMenu, ev) {
        originatorEv = ev;
        $mdMenu.open(ev);
@@ -23,6 +35,7 @@ vc.deleteCompletedWorkout = function (selectedWorkout) {
   $http.delete('/complete/'+ selectedWorkout.id).then(function(response){
     console.log('things got deleted, Nice');
     vc.getCompleteWorkouts();
+    deleteSelectedToast();
   }, function(failure){
     console.log('something broke');
   });

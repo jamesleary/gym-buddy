@@ -23,6 +23,7 @@ div.homepage.ng-scope.layout-column {
   padding-top: 20%;
   text-align: center;
   text-decoration: none;
+  margin-right: 20px;
 }
 .exerciseinput{
   width:250px;

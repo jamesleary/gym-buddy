@@ -1,8 +1,8 @@
 
-<div layout="column" layout-align="center start">
+<div layout="column" layout-align="center start" style="margin-top:50px;">
 <md-input-container>
   <label>Select Workout here</label>
-  <md-select ng-model="wc.currentWorkout">
+  <md-select style="width:250px;"ng-model="wc.currentWorkout">
     <md-option><em>None</em></md-option>
     <md-option  ng-repeat="workout in wc.workouts" ng-value="workout">
       {{workout.name}}
@@ -10,7 +10,7 @@
   </md-select>
 </md-input-container>
 
-<md-input-container>
+<md-input-container style="margin-top:25px;">
   <label>Enter Unique Name</label>
   <input ng-model="wc.currentWorkout.uniqueWorkout">
 </md-input-container>
@@ -38,7 +38,33 @@
           <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_one">
         </md-input-container>
       <td md-cell>{{wc.currentWorkout.reps_one}}</td>
-      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+      <td md-cell><md-menu>
+          <md-button aria-label="Open menu" class="md-icon-button" ng-click="wc.openMenu($mdMenu, $event)">
+             <md-icon id="morevert"md-menu-origin>more_vert</md-icon>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 1
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 2
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 3
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete set 4
+              </md-checkbox>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu></td></tr>
     <tr md-row>
       <td md-cell>{{wc.currentWorkout.exercise_two}}</td>
       <td md-cell><md-input-container class="weightinput">
@@ -46,7 +72,33 @@
         <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_two">
       </md-input-container></td>
       <td md-cell>{{wc.currentWorkout.reps_two}}</td>
-      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+      <td md-cell><md-menu>
+          <md-button aria-label="Open menu" class="md-icon-button" ng-click="wc.openMenu($mdMenu, $event)">
+             <md-icon id="morevert"md-menu-origin>more_vert</md-icon>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 1
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 2
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 3
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete set 4
+              </md-checkbox>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu></td></tr>
     <tr md-row>
       <td md-cell>{{wc.currentWorkout.exercise_three}}</td>
       <td md-cell><md-input-container class="weightinput">
@@ -54,7 +106,33 @@
         <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_three">
       </md-input-container></td>
       <td md-cell>{{wc.currentWorkout.reps_three}}</td>
-      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+      <td md-cell><md-menu>
+          <md-button aria-label="Open menu" class="md-icon-button" ng-click="wc.openMenu($mdMenu, $event)">
+             <md-icon id="morevert"md-menu-origin>more_vert</md-icon>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 1
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 2
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 3
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete set 4
+              </md-checkbox>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu></td></tr>
     <tr md-row>
       <td md-cell>{{wc.currentWorkout.exercise_four}}</td>
       <td md-cell><md-input-container class="weightinput">
@@ -62,7 +140,33 @@
         <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_four">
       </md-input-container></td>
       <td md-cell>{{wc.currentWorkout.reps_four}}</td>
-      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+      <td md-cell><md-menu>
+          <md-button aria-label="Open menu" class="md-icon-button" ng-click="wc.openMenu($mdMenu, $event)">
+             <md-icon id="morevert"md-menu-origin>more_vert</md-icon>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 1
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 2
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 3
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete set 4
+              </md-checkbox>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu></td></tr>
     <tr md-row>
       <td md-cell>{{wc.currentWorkout.exercise_five}}</td>
       <td md-cell><md-input-container class="weightinput">
@@ -70,7 +174,33 @@
         <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_five">
       </md-input-container></td>
       <td md-cell>{{wc.currentWorkout.reps_five}}</td>
-      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+      <td md-cell><md-menu>
+          <md-button aria-label="Open menu" class="md-icon-button" ng-click="wc.openMenu($mdMenu, $event)">
+             <md-icon id="morevert"md-menu-origin>more_vert</md-icon>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 1
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 2
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 3
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete set 4
+              </md-checkbox>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu></td></tr>
     <tr md-row>
       <td md-cell>{{wc.currentWorkout.exercise_six}}</td>
       <td md-cell><md-input-container class="weightinput">
@@ -78,7 +208,33 @@
         <input type ='number'class="weightinput"ng-model="wc.currentWorkout.weight_six">
       </md-input-container></td>
       <td md-cell>{{wc.currentWorkout.reps_six}}</td>
-      <td md-cell><input type="checkbox"><input type="checkbox"><input type="checkbox"></td></tr>
+      <td md-cell><md-menu>
+          <md-button aria-label="Open menu" class="md-icon-button" ng-click="wc.openMenu($mdMenu, $event)">
+             <md-icon id="morevert"md-menu-origin>more_vert</md-icon>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 1
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 2
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete Set 3
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox>
+                complete set 4
+              </md-checkbox>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu></td></tr>
   </tbody>
 </table>
 
@@ -89,10 +245,10 @@
        <textarea ng-model="wc.currentWorkout.workoutNotes" md-maxlength="150" rows="5" md-select-on-focus></textarea>
 </md-input-container>
 <md-input-container>
-<md-button class="md-raised" ng-click= "wc.postCompleteWorkout(wc.currentWorkout)">Complete Workout</md-button>
+<md-button style="text-transform:lowercase;" class="md-raised" ng-click= "wc.postCompleteWorkout(wc.currentWorkout)">Complete Workout</md-button>
 </md-input-container>
 </div>
 
-<div id="footer">
+<div id="footer" style="width:30px">
 <a href="#/user"><i class="material-icons">replay</i></a>
 </div>

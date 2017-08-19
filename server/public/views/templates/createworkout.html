@@ -4,7 +4,7 @@
 <div class="workoutnameinput">
 <md-input-container class="exerciseinput">
   <label>Enter Workout Name</label>
-  <input class="exerciseinput"ng-model="exercise.workout_name">
+  <input class="exerciseinput" ng-model="exercise.workout_name">
 </md-input-container>
 </div>
 
@@ -21,7 +21,7 @@
         <td md-cell><md-input-container>
           <label>exercise 1</label>
           <md-select ng-model="exercise.workout_one">
-
+            <md-option><span>None</span></md-option>
             <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
             </md-option>
           </md-select>
@@ -36,7 +36,7 @@
           <td md-cell><md-input-container>
             <label>exercise 2</label>
             <md-select ng-model="exercise.workout_two">
-
+              <md-option><span>None</span></md-option>
               <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
               </md-option>
             </md-select>
@@ -52,7 +52,7 @@
           <td md-cell><md-input-container>
             <label>exercise 3</label>
             <md-select ng-model="exercise.workout_three">
-
+              <md-option><span>None</span></md-option>
               <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
               </md-option>
             </md-select>
@@ -67,7 +67,7 @@
           <td md-cell><md-input-container>
             <label>exercise 4</label>
             <md-select ng-model="exercise.workout_four">
-
+              <md-option><span>None</span></md-option>
               <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
               </md-option>
             </md-select>
@@ -82,7 +82,7 @@
           <td md-cell><md-input-container>
             <label>exercise 5</label>
             <md-select ng-model="exercise.workout_five">
-
+              <md-option><span>None</span></md-option>
               <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
               </md-option>
             </md-select>
@@ -97,6 +97,7 @@
           <td md-cell><md-input-container >
             <label>exercise 6</label>
             <md-select ng-model="exercise.workout_six">
+              <md-option><span>None</span></md-option>
               <md-option ng-repeat="exercise in cw.exerciseList" ng-value="exercise">{{exercise.exercise_name}}
               </md-option>
             </md-select>
@@ -115,8 +116,8 @@
 
 <div layout="row" layout-align="center center">
 
-  <div><md-button class="md-raised md-primary" ng-click="cw.createNewWorkout(exercise)">Create Workout</md-button></div>
-  <div><md-button class="md-raised" ng-click="cw.goToEditWorkouts()">View Workouts</md-button></div>
+  <div><md-button style="text-transform:lowercase;" class="md-raised md-primary" ng-click="cw.createNewWorkout(exercise)">Create Workout</md-button></div>
+  <div><md-button style="text-transform:lowercase;"class="md-raised" ng-click="cw.goToEditWorkouts()">View Workouts</md-button></div>
 </div>
 <div id="footer">
 <a href="#/user"><i class="material-icons">replay</i></a>
