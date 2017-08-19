@@ -140,10 +140,15 @@ textarea {
 #container {
   margin-top: 10px;
 }
+.container{
+  margin-top: 50%;
+}
 .md-padding {
   text-decoration: none;
 }
-
+.spacer {
+  height:40px;
+}
 .container p{
   margin-top : 14px;
 }
