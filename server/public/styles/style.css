@@ -46,7 +46,7 @@ table.md-table td.md-cell  {
 #footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 50px;
 }
 md-input-container{
   margin-top: 10px;
