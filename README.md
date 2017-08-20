@@ -11,9 +11,9 @@ There are four majors features:
 
 SEAN Stack
   Postgresql
-  express
-  angular
-  node
+  Express
+  Angular 1.6.5
+  Node
 
   Angular Materials
   Bootstrap
@@ -29,8 +29,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 technologies used to create gym buddy:
 
-- [Node.js](https://nodejs.org/en/)
-- "angular": "^1.6.5",
+-  [Node.js](https://nodejs.org/en/)
+-  [Postico] (https://eggerapps.at/postico/) (optional)
+-  [Material Icons] (https://material.io/icons/)
+-  "angular": "^1.6.5",
 -  "angular-animate": "^1.6.5",
 -  "angular-aria": "^1.6.5",
 -  "angular-material": "^1.1.4",
@@ -51,8 +53,7 @@ technologies used to create gym buddy:
 -  "passport-local": "^1.0.0",
 -  "path": "^0.11.14",
 -  "pg": "^7.1.0"
-- [Postico] (https://eggerapps.at/postico/) (optional)
-- [Material Icons] (https://material.io/icons/)
+
 
 
 ### Installing
@@ -141,24 +142,27 @@ Link to a read-only version of your scope document or other relevant documentati
 
 High level list of items completed.
 
-- [x] Feature a
-- [x] Feature b
+- [x] Select a Workout feature
+  Pick a workout saved in the database, fill out amount of weight used during exercise and save amounts to completed workouts table
+- [x] Create Exercise Feature
+  Create a unique exercise with a class to search on when adding to a workout. Also ability to edit created  exercises or delete them.
+- [x] Create new workout Feature
+  Add six created exercises and save them as a workout with assigned amount of reps.
+- [x] View Completed workouts
+  View and search through completed workouts and ability to delete old workouts.
+- [x] Random motivation quote
+  On page load shows a random quote to get user motivation to workout right from the start.
 
 ### Next Steps
 
 Features that you would like to add at some point in the future.
 
-- [ ] Feature c
+- [ ] Mens Health API
+  Add a drop down on click feature on the select a workout feature that would give a description base on the exercise name and show a youtube video of the exercise in motion.  
+- [ ] Add Responsiveness for Desktop/Ipad
+  Add styling and desktop versions for better user experience
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* Name of author(s)
-
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
+* James P. Leary III
