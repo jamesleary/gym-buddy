@@ -161,6 +161,7 @@ Features that you would like to add at some point in the future.
   Add a drop down on click feature on the select a workout feature that would give a description base on the exercise name and show a youtube video of the exercise in motion.  
 - [ ] Add Responsiveness for Desktop/Ipad
   Add styling and desktop versions for better user experience
+  
 
 
 ## Authors
