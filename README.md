@@ -12,13 +12,13 @@ There are four majors features:
 SEAN Stack
   Postgresql
   Express
-  Angular 1.6.5
+  Angular 1
   Node
 
-  Angular Materials
+  Angular Materials (mdToast, xeditable, ngMdIcons, md.data.table,)
   Bootstrap
   Google fonts
-  passport
+  Passport
   Heroku
 
 ## Getting Started
@@ -130,13 +130,12 @@ CREATE TABLE "complete_workout" (
 );
 ```
 
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
 
 ## Documentation
 
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
+Scope Documentation
+
+https://docs.google.com/document/d/1QS_yFA1DYrqlVTaM-fACut2eht7N5BTyIFjBWgImr-0/edit?usp=sharing
 
 ### Completed Features
 
@@ -161,7 +160,9 @@ Features that you would like to add at some point in the future.
   Add a drop down on click feature on the select a workout feature that would give a description base on the exercise name and show a youtube video of the exercise in motion.  
 - [ ] Add Responsiveness for Desktop/Ipad
   Add styling and desktop versions for better user experience
-  
+- [ ] Butter customization of Create a workout
+  Use the add row feature on a table to dynamically add on to a created workout.
+
 
 
 ## Authors
