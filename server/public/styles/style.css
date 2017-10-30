@@ -184,3 +184,6 @@ li a:hover {
   text-decoration: underline;
   color: #eee;
 }
+.tile {
+  background-color: white;
+}
