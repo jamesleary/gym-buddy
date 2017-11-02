@@ -5,7 +5,6 @@
 body, html {
   margin: 0;
   padding: 0;
-  text-transform: lowercase;
   font-size: 18px;
 }
 #welcome {
@@ -16,9 +15,7 @@ body, html {
   margin-left:15px;
   margin-right:15px;
 }
-.md-no-ink:hover{
-  background-color: white;
-}
+
 div.homepage.ng-scope.layout-column {
   padding-top: 20%;
   text-align: center;
@@ -96,9 +93,7 @@ max-width: 100%;
   font-weight: 600;
   text-align: center;
 }
-button , input, md-button{
-  text-transform: lowercase;
-}
+
 .instructions {
   background-color: #333333;
   color: #DDDDDD;
@@ -156,9 +151,11 @@ body{
   /*background-image: url("/../images/homepage.jpg");*/
   background-size: 414px 736px;
   background-repeat: no-repeat;
-  text-transform: lowercase;
-}
 
+}
+.instructions {
+  background-color: black;
+}
 .message:nth-child(odd) {
    background-color: #eeeeee;
 }

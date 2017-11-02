@@ -1,4 +1,4 @@
-
+<div ng-include="'views/partials/sidenav.html'"></div>
 
 
 <div class="workoutnameinput">
@@ -116,8 +116,8 @@
 
 <div layout="row" layout-align="center center">
 
-  <div><md-button style="text-transform:lowercase;" class="md-raised md-primary" ng-click="cw.createNewWorkout(exercise)">Create Workout</md-button></div>
-  <div><md-button style="text-transform:lowercase;"class="md-raised" ng-click="cw.goToEditWorkouts()">View Workouts</md-button></div>
+  <div><md-button  class="md-raised md-primary" ng-click="cw.createNewWorkout(exercise)">Create Workout</md-button></div>
+  <div><md-button class="md-raised md-secondary" ng-click="cw.goToEditWorkouts()">View Workouts</md-button></div>
 </div>
 <div id="footer">
 <a href="#/user"><i class="material-icons">replay</i></a>
