@@ -2,24 +2,24 @@
 
   <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
     <form ng-submit="lc.login()">
-      <div>
+      <div class="input-control">
         <md-input-container class="md-icon-float md-block input">
           <!-- Use floating label instead of placeholder -->
           <label>UserName</label>
-          <input style="text-transform:none;"ng-model="lc.user.username" type="text">
+          <input ng-model="lc.user.username" type="text">
         </md-input-container>
       </div>
-      <div>
+      <div class="input-control">
         <md-input-container class="md-icon-float md-block" id="input">
           <!-- Use floating label instead of placeholder -->
           <label>Password</label>
-          <input type="password" ng-model="lc.user.password" type="text">
+          <input class="input-control" type="password" ng-model="lc.user.password" type="text">
         </md-input-container>
       </div>
-      <div layout="column">
+      <div class="center">
         <input class="md-button md-raised md-primary" type="submit" name="submit" value="Log In">
         <div class="spacer">  </div>
-        <a  style="text-align:center"href="#register">New to gym buddy? Register here</a>
+        <a  href="#register">New to gym buddy? Register here</a>
       </div>
     </form>
   </div>
